@@ -1,41 +1,11 @@
-from prefect import Task
+from prefect.core import Task
 
-import random
-random.seed(30)
 
-class RescaledRange(Task): 
+class RescaledRange(Task):
+    def __init__(self):
+        super().__init__()
 
-    def __init__(self, data_frame, **kwargs):
-        """
-        Instantiation of class for calculating rescaled range 
-            on provided time series.
-
-        :Example:
-        >>> rr = RescaledRange(dask_dataframe, window=6)
-        >>> rr.run()
-        """
-        self.ddf = data_frame
-
-        self.window = kwargs.get('window')
-        self.min_periods = kwargs.get('min_periods', 6)
-        self.center = kwargs.get('center', False)
-        self.win_type = kwargs.get('win_type', None)
-        self.axis = kwargs.get('axis', 0)
-    
-    def _mean_adjust(self, time_series, mean_series):
-        """
-        A private method take the difference between two
-        series.
-
-        :param time_series: the data series to be processed
-        :type code_list: Dask.Series, required
-        :return: single series that is the difference between two 
-        series.
-        :rtype: Dask.Series
-        """
-        return self.ddf[time_series] - self.ddf[mean_series]
-
-    def run(self):
+    def run(self, data):
         """
         A private method to reorder the fred dataset codes
         so that the left join of all the datasets works
@@ -48,39 +18,45 @@ class RescaledRange(Task):
         by frequency from high-frequency to low-frequency
         :rtype: list
         """
-        self.ddf['counter'] = 1
+        window=6
+        min_periods=6
+        center=False
+        win_type=None
+        axis=0
 
-        self.ddf['ts'] = ((self.ddf['ts'] / self.ddf['ts'].shift(1)) - 1)
-        self.ddf = self.ddf[self.ddf['ds'] != '2020-01-21']
-        self.ddf['mean'] = (self.ddf['ts'].shift(1).cumsum() / (self.ddf['counter'].cumsum()-1))
-        self.ddf['mean_adj'] = self._mean_adjust('ts', 'mean')
-        self.ddf['sum_deviate'] = self.ddf['mean_adj'].cumsum()
-        self.ddf['R'] = self.ddf['mean_adj'].rolling(
-                window=self.window,
-                min_periods=self.min_periods,
-                center=self.center,
-                win_type=self.win_type,
-                axis=self.axis,
-            ).max() - self.ddf['mean_adj'].rolling(
-                window=self.window,
-                min_periods=self.min_periods,
-                center=self.center,
-                win_type=self.win_type,
-                axis=self.axis,
+        data['counter'] = 1
+
+        data['ts'] = ((data['ts'] / data['ts'].shift(1)) - 1)
+        data = data[data['ds'] != '2020-01-21']
+        data['mean'] = (data['ts'].shift(1).cumsum() / (data['counter'].cumsum()-1))
+        data['mean_adj'] = data['ts'] - data['mean']
+        data['sum_deviate'] = data['mean_adj'].cumsum()
+        data['R'] = data['mean_adj'].rolling(
+                window=window,
+                min_periods=min_periods,
+                center=center,
+                win_type=win_type,
+                axis=axis,
+            ).max() - data['mean_adj'].rolling(
+                window=window,
+                min_periods=min_periods,
+                center=center,
+                win_type=win_type,
+                axis=axis,
             ).min()
-        self.ddf = self.ddf[self.ddf['ds'] >= '2020-01-23']
-        self.ddf['mean_adj_sqr'] = self.ddf['mean_adj'] ** 2
-        self.ddf['cum_sum_mean_adj_sqr'] = self.ddf['mean_adj_sqr'].cumsum()
-        self.ddf['cum_sum_counter'] = self.ddf['counter'].cumsum()
+        data = data[data['ds'] >= '2020-01-23']
+        data['mean_adj_sqr'] = data['mean_adj'] ** 2
+        data['cum_sum_mean_adj_sqr'] = data['mean_adj_sqr'].cumsum()
+        data['cum_sum_counter'] = data['counter'].cumsum()
         
         def _cum_std(row): 
             return (row['cum_sum_mean_adj_sqr'] / row['cum_sum_counter']) ** (1/2)
 
-        self.ddf['std'] = self.ddf.apply(_cum_std, axis=1)
-        self.ddf['r_s'] = (self.ddf['R'] / self.ddf['std'])
+        data['std'] = data.apply(_cum_std, axis=1)
+        data['r_s'] = (data['R'] / data['std'])
 
         return {
-            'ds': self.ddf['ds'].values,
-            'ts': self.ddf['ts'].values,
-            'r_s': self.ddf['r_s'].values
+            'ds': data['ds'].values,
+            'ts': data['ts'].values,
+            'r_s': data['r_s'].values
         }

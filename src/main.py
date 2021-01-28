@@ -1,18 +1,19 @@
 from prefect import Flow, Parameter
 from tasks.rescaled_range_tasks import RescaledRange
-# from tasks.preprocess_tasks import Preprocess
-# from tasks.visualize_tasks import Visualize
-# from tasks.metrics_tasks import Metrics
-
-
+from tasks.read_data_tasks import DataReader
 from dask import dataframe as dd
 import pandas as pd
-df = pd.read_csv('../data/spy.csv')
-ddf = dd.from_pandas(df, npartitions=3)
+
+reader = DataReader()
+rr = RescaledRange()
 
 #define the flow
 with Flow('rescaled_range') as flow:
-    data = RescaledRange(ddf, window=6).run()
+    data_type = Parameter('data_type', default='dask')
+    flow.add_task(data_type)
+    
+    data = reader(data_type)
+    rr_data = rr(data)
 
-# run the flow
+flow.visualize()
 flow.run()
