@@ -9,6 +9,7 @@ This package is built using Prefect, Dask, and Pandas. See [here]() for document
 ```shell
 git clone https://github.com/taylorfturner/rescaledranges.git
 cd rescaledranges
+conda create -n rescaledranges
 python setup.py install
 ```
 
