@@ -1,13 +1,19 @@
 from prefect import Task 
 
 
-class Metrics(Task): 
+class Metrics(Task):
+    def __init__(self):
+        """
+        Metrics Subclass of Prefect Task class.
 
-    def __init__(self): 
+        :Example:
+        >>> metrics = Metrics()
+        >>> Metrics.run()
+        """
         super().__init__()
 
-    def count_sell_signals(self): 
-        pass
+    def count_sell_signals(self):
+        raise NotImplementedError
 
-    def count_buy_signals(self): 
-        pass
+    def count_buy_signals(self):
+        raise NotImplementedError
