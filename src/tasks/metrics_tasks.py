@@ -17,3 +17,6 @@ class Metrics(Task):
 
     def count_buy_signals(self):
         raise NotImplementedError
+
+    def confusion_matrix(self):
+        raise NotImplementedError
