@@ -9,9 +9,10 @@ rr = RescaledRange()
 
 #define the flow
 with Flow('rescaled_range') as flow:
+
     data_type = Parameter('data_type', default='dask')
     flow.add_task(data_type)
-    
+
     data = reader(data_type)
     rr_data = rr(data)
 
