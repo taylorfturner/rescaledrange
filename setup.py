@@ -5,7 +5,7 @@ with open("requirements.txt") as f:
 
 setup(
     name="rescaledranges",
-    version="0.0.1",
+    version="0.0.0",
     description="Fractal Rescaled Range Analysis",
     author="Taylor F. Turner, IV",
     author_email="taylorfturner@gmail.com",

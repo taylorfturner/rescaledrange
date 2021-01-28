@@ -3,20 +3,22 @@ from prefect.core import Task
 
 class RescaledRange(Task):
     def __init__(self):
+        """
+        RescaledRange Subclass of Prefect Task class.
+
+        :Example:
+        >>> rescaled_ranges = RescaledRange()
+        >>> rescaled_ranges.run(data)
+        """
         super().__init__()
 
     def run(self, data):
-        """
-        A private method to reorder the fred dataset codes
-        so that the left join of all the datasets works
-        correctly and we do not drop data from higher-frequence
-        datasets.
+        """[summary]
 
-        :param code_list: list of FRED dataset codes
-        :type code_list: list, required
-        :return: list of ordered FRED dataset codes, ordered
-        by frequency from high-frequency to low-frequency
-        :rtype: list
+        :param data: [description]
+        :type data: [type]
+        :return: [description]
+        :rtype: [type]
         """
         window=6
         min_periods=6
