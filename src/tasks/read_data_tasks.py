@@ -33,7 +33,8 @@ class DataReader(Task):
         :return: [description]
         :rtype: [type]
         """
-        ticker = ticker
+        ticker_built = ticker + '.csv'
+        print (ticker_built)
         return pd.read_csv('spy.csv')
 
     def run(self, data_type, ticker):
@@ -51,4 +52,6 @@ class DataReader(Task):
         if data_type == 'dask':
             return self._read_dask(ticker)
         elif data_type == 'pandas':
-            raise self._read_pandas(ticker)
+            return self._read_pandas(ticker)
+        else:
+            raise ValueError
