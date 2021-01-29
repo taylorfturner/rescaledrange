@@ -8,9 +8,16 @@ class Visualize(Task):
 
         :Example:
         >>> viz = Visualize()
-        >>> viz.run()
+        >>> viz
+        >>> <Task: Visualize>
         """
         super().__init__()
     
     def equity_curve(self): 
+        raise NotImplementedError
+
+    def flow_visualize(self, flow):
+        return flow.visualize()
+
+    def signal_summary(self):
         raise NotImplementedError
