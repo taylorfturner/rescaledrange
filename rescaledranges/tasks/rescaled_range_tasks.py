@@ -4,7 +4,7 @@ from prefect.core import Task
 class RescaledRange(Task):
     def __init__(self):
         """
-        RescaledRange Subclass of Prefect Task class.
+        RescaledRange Subclass of Prefect Task Class.
 
         :Example:
         >>> rescaled_ranges = RescaledRange()
@@ -28,10 +28,10 @@ class RescaledRange(Task):
 
         data['counter'] = 1
 
-        data['ts'] = ((data['ts'] / data['ts'].shift(1)) - 1)
+        data['ts_pcnt'] = ((data['ts'] / data['ts'].shift(1)) - 1)
         data = data[data['ds'] != '2020-01-21']
-        data['mean'] = (data['ts'].shift(1).cumsum() / (data['counter'].cumsum()-1))
-        data['mean_adj'] = data['ts'] - data['mean']
+        data['mean'] = (data['ts_pcnt'].shift(1).cumsum() / (data['counter'].cumsum()-1))
+        data['mean_adj'] = data['ts_pcnt'] - data['mean']
         data['sum_deviate'] = data['mean_adj'].cumsum()
         data['R'] = data['mean_adj'].rolling(
                 window=window,
@@ -60,5 +60,6 @@ class RescaledRange(Task):
         return {
             'ds': data['ds'].values,
             'ts': data['ts'].values,
+            'ts_pcnt': data['ts_pcnt'].values,
             'r_s': data['r_s'].values
         }
