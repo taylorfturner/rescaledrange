@@ -21,3 +21,6 @@ class Visualize(Task):
 
     def signal_summary(self):
         raise NotImplementedError
+
+    def plost(self):
+        raise NotImplementedError

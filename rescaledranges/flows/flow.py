@@ -6,12 +6,12 @@ from tasks.rescaled_range_tasks import RescaledRange
 from tasks.read_data_tasks import DataReader
 
 
-class FlowBuilder(Flow):
+class Flow(Flow):
     def __init__(self, flow_name='rescaled_range'):
         super().__init__(flow_name)
 
     @classmethod
-    def get_flow(cls, data_list=['data_one', 'data_two', 'data_three']):
+    def create_flow(cls, data_list=['data_one', 'data_two', 'data_three']):
 
         reader = DataReader()
         rr = RescaledRange()
@@ -28,7 +28,3 @@ class FlowBuilder(Flow):
             mapped=True)
 
         return True
-
-    @classmethod
-    def run(cls):
-        cls.run()

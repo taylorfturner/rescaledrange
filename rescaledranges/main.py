@@ -3,17 +3,32 @@ from tasks.rescaled_range_tasks import RescaledRange
 from tasks.read_data_tasks import DataReader
 
 
-ticker_list = ['SPY', 'TLT']
 reader = DataReader()
 rr = RescaledRange()
 
 with Flow('rescaled_range') as flow:
 
-    data_type = Parameter('data_type', default='pandas')
+    data_type = Parameter(
+        name='data_type',
+        default='pandas'
+    )
+    ticker_list = Parameter(
+        name='ticker_list',
+        default=['SPY', 'TLT', 'IWM']
+    )
+    
     flow.add_task(data_type)
 
-    data = reader.map(
-        data_type=unmapped(data_type), 
-        ticker=ticker_list
+    data = reader(
+        data_type=unmapped(data_type),
+        ticker=ticker_list,
+        mapped=True
     )
-    rr_data = rr.map(data=data)
+
+    rs_data = rr(
+        data=data,
+        mapped=True
+    )
+
+flow.visualize()
+state = flow.run()
