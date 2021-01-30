@@ -17,6 +17,3 @@ with Flow('rescaled_range') as flow:
         ticker=ticker_list
     )
     rr_data = rr.map(data=data)
-
-flow.visualize()
-flow.run()
