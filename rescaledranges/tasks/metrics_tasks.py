@@ -20,3 +20,6 @@ class Metrics(Task):
 
     def confusion_matrix(self):
         raise NotImplementedError
+
+    def run(self):
+        pass

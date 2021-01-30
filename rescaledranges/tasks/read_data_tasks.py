@@ -15,11 +15,11 @@ class DataReader(Task):
         super().__init__()
 
     def _read_dask(self, ticker):
-        df = pd.read_csv(f'{ticker}.csv')
+        df = pd.read_csv(f'data/{ticker}.csv')
         return dd.from_pandas(df, npartitions=3)
 
     def _read_pandas(self, ticker):
-        return pd.read_csv(f'{ticker}.csv')
+        return pd.read_csv(f'data/{ticker}.csv')
 
     def run(self, data_type, ticker):
         if data_type == 'dask':

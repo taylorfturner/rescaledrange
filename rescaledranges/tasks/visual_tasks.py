@@ -22,5 +22,8 @@ class Visualize(Task):
     def signal_summary(self):
         raise NotImplementedError
 
-    def plost(self):
-        raise NotImplementedError
+    def plot(self, state):
+        plot_data = state.result[rs_data].result[0]
+        plot_data_df = pd.DataFrame(plot_data)
+        fig = px.line(plot_data_df, x="ds", y="r_s")
+        fig.show()
