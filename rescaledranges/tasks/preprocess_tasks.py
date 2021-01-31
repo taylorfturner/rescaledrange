@@ -17,3 +17,6 @@ class PreProcess(Task):
 
     def calc_percentage(self):
         raise NotImplementedError
+
+    def run(self):
+        raise NotImplementedError

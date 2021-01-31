@@ -4,7 +4,10 @@ from prefect import Task
 class Metrics(Task):
     def __init__(self):
         """
-        Metrics Subclass of Prefect Task class.
+        Metrics Subclass of Prefect Task class. This should include 
+        everything from count of buy / sell signals, confusion matrix, 
+        and any other metric related to the success of failure of
+        the system on the particular ticker.
 
         :Example:
         >>> metrics = Metrics()
@@ -12,14 +15,5 @@ class Metrics(Task):
         """
         super().__init__()
 
-    def count_sell_signals(self):
-        raise NotImplementedError
-
-    def count_buy_signals(self):
-        raise NotImplementedError
-
-    def confusion_matrix(self):
-        raise NotImplementedError
-
     def run(self):
-        pass
+        raise NotImplementedError
