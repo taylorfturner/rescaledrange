@@ -10,6 +10,8 @@ class DataReader(Task):
 
         :Example:
         >>> data_reader = DataReader()
+        >>> data_reader
+        >>> <Task: DataReader>
         >>> data_reader.run()
         """
         super().__init__()
@@ -22,7 +24,7 @@ class DataReader(Task):
         :return: [description]
         :rtype: [type]
         """
-        df = pd.read_csv(ticker)
+        df = pd.read_csv(f'data/{ticker}.csv')
         return dd.from_pandas(df, npartitions=3)
 
     def _read_pandas(self, ticker):
@@ -33,9 +35,7 @@ class DataReader(Task):
         :return: [description]
         :rtype: [type]
         """
-        ticker_built = ticker + '.csv'
-        print (ticker_built)
-        return pd.read_csv('spy.csv')
+        return pd.read_csv(f'data/{ticker}.csv')
 
     def run(self, data_type, ticker):
         """[summary]
@@ -44,7 +44,6 @@ class DataReader(Task):
         :type data_type: [type]
         :param ticker: [description]
         :type ticker: [type]
-        :raises self._read_pandas: [description]
         :raises ValueError: [description]
         :return: [description]
         :rtype: [type]
@@ -54,4 +53,4 @@ class DataReader(Task):
         elif data_type == 'pandas':
             return self._read_pandas(ticker)
         else:
-            raise ValueError
+            raise ValueError("Only Dask or Pandas accepted")
