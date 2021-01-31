@@ -1,6 +1,7 @@
 import pytest
 from prefect import Task
 from rescaledranges.tasks.read_data_tasks import DataReader
+from fixtures.data_fixtures import data_fixture
 
 def test_data_reader_no_params():
     data_reader = DataReader()
@@ -14,7 +15,7 @@ def test_data_reader_failure_data_frame_type():
             data_type='csv',
             ticker='one')
 
-def test_data_reader_file_not_found_error():
+def test_data_reader_pandas_run():
     with pytest.raises(FileNotFoundError):
         data_reader = DataReader()
         data_reader.run(
@@ -22,6 +23,10 @@ def test_data_reader_file_not_found_error():
             data_type='csv',
             ticker='one')
 
-def test_data_reader_type():
-    data_reader = DataReader()
-    assert type(data_reader) == type(Task)
+def test_data_reader_file_not_found_error():
+    with pytest.raises(FileNotFoundError):
+        data_reader = DataReader()
+        data_reader.run(
+            data_frame_type='dask',
+            data_type='csv',
+            ticker='one')
