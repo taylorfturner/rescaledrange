@@ -12,8 +12,13 @@ class PreProcess(Task):
         """
         super().__init__()
 
-    def first_diff(self):
-        raise NotImplementedError
+    def run(self, data):
 
-    def calc_percentage(self):
-        raise NotImplementedError
+        def counter_column(row):
+            row['counter'] = 1
+            return row
+
+        data = data.apply(counter_column, axis=1)
+        data['ts_pcnt'] = data['ts'].pct_change()
+
+        return data
