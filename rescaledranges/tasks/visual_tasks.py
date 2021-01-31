@@ -22,7 +22,7 @@ class Visualize(Task):
         raise NotImplementedError
 
     def visualize_graph(self, flow):
-        return flow.visualize()
+        raise NotImplementedError
 
     def plot(self, ticker_data):
         #TODO: move this to Dash
