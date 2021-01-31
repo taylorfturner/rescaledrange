@@ -51,7 +51,7 @@ class RescaledRange(Task):
         self.data = data
 
         self.data['mean'] = self.cummean('ts_pcnt')
-        self.data['mean_adjust'] = self.mean_adjust('ts_pcnt')
+        self.data['mean_adj'] = self.mean_adjust('ts_pcnt')
         self.data['sum_deviate'] = self.data['mean_adj'].cumsum()
         self.data['R'] = self.calc_r('mean_adj')
         self.data['mean_adj_sqr'] = self.data['mean_adj'] ** 2
