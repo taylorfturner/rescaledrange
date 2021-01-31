@@ -28,6 +28,7 @@ class RescaledRange(Task):
 
         data['counter'] = 1
 
+        #TODO: pct_change() instead of `.shift()`
         data['ts_pcnt'] = ((data['ts'] / data['ts'].shift(1)) - 1)
         data = data[data['ds'] != '2020-01-21']
         data['mean'] = (data['ts_pcnt'].shift(1).cumsum() / (data['counter'].cumsum()-1))
@@ -52,7 +53,7 @@ class RescaledRange(Task):
         data['cum_sum_counter'] = data['counter'].cumsum()
         
         def _cum_std(row): 
-            return (row['cum_sum_mean_adj_sqr'] / row['cum_sum_counter']) ** (1/2)
+            return (row['cum_sum_mean_adj_sqr'] / row['cum_sum_counter']) ** .5
 
         data['std'] = data.apply(_cum_std, axis=1)
         data['r_s'] = (data['R'] / data['std'])
