@@ -9,7 +9,6 @@ rr = RescaledRange()
 visualize = Visualize()
 
 with Flow('rescaled_range') as flow:
-
     data_frame_type = Parameter(
         name='data_frame_type',
         default='pandas'
@@ -22,21 +21,17 @@ with Flow('rescaled_range') as flow:
         name='ticker_list',
         default=['SPY', 'TLT', 'IWM']
     )
-
     flow.add_task(data_type)
-
     data = reader(
         data_frame_type=unmapped(data_frame_type),
         data_type=unmapped(data_type),
         ticker=ticker_list,
         mapped=True
     )
-
     rs_data = rr(
         data=data,
         mapped=True
     )
-
     visualize(
     	ticker_data=rs_data,
     	mapped=True
