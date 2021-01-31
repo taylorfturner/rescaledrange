@@ -14,7 +14,8 @@ class RescaledRange(Task):
         self.data = None
 
     def cummean(self, column_name):
-        return self.data[column_name].shift(1).cumsum() / (self.data['counter'].cumsum()-1)
+        return self.data[column_name].shift(1).cumsum() / \
+            (self.data['counter'].cumsum()-1)
 
     def mean_adjust(self, column_name):
         return self.data[column_name] - self.data['mean']
@@ -48,15 +49,6 @@ class RescaledRange(Task):
         :rtype: [type]
         """
         self.data = data
-
-        self.data['counter'] = 1
-
-        #TODO: pct_change() instead of `.shift()`
-        #TODO: move the below two (2) lines to preprocess_tasks.py
-        # they are not actual operation pertinent to the rescaled range
-        # calculations -- they are preprocessing of the data provided
-        data['ts_pcnt'] = ((data['ts'] / data['ts'].shift(1)) - 1)
-        data = data[data['ds'] != '2020-01-21']
 
         self.data['mean'] = self.cummean('ts_pcnt')
         self.data['mean_adjust'] = self.mean_adjust('ts_pcnt')
