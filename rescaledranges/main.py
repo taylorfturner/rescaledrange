@@ -1,10 +1,12 @@
 from prefect import Flow, Parameter, unmapped
-from tasks.rescaled_range_tasks import RescaledRange
+from tasks.preprocess_tasks import PreProcess
 from tasks.read_data_tasks import DataReader
+from tasks.rescaled_range_tasks import RescaledRange
 from tasks.visual_tasks import Visualize
 
 
 reader = DataReader()
+pre_process = PreProcess()
 rr = RescaledRange()
 visualize = Visualize()
 
@@ -28,8 +30,12 @@ with Flow('rescaled_range') as flow:
         ticker=ticker_list,
         mapped=True
     )
-    rs_data = rr(
+    pre_processed_data = pre_process(
         data=data,
+        mapped=True
+    )
+    rs_data = rr(
+        data=pre_processed_data,
         mapped=True
     )
     visualize(
