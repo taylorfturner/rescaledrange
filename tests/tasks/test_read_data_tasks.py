@@ -2,6 +2,7 @@ import pytest
 from prefect import Task, Flow
 from rescaledranges.tasks.read_data_tasks import DataReader
 
+
 @pytest.fixture
 def flow():
     return Flow('test_read_data_flow')
