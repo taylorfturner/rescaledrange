@@ -19,6 +19,6 @@ class PreProcess(Task):
             return row
 
         data = data.apply(counter_column, axis=1)
-        data['ts_pcnt'] = data['ts'].pct_change()
+        data['ts_pcnt'] = data['Close'].pct_change()
 
         return data

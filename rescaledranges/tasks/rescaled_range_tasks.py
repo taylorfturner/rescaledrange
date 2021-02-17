@@ -40,7 +40,7 @@ class RescaledRange(Task):
             return (row['cum_sum_mean_adj_sqr'] / row['cum_sum_counter']) ** .5
         return self.data.apply(_cum_std, axis=1)
 
-    def run(self, data):
+    def run(self, data, ticker):
         """[summary]
 
         :param data: [description]
@@ -58,11 +58,7 @@ class RescaledRange(Task):
         self.data['cum_sum_mean_adj_sqr'] = self.data['mean_adj_sqr'].cumsum()
         self.data['cum_sum_counter'] = self.data['counter'].cumsum()
         self.data['std'] = self.cumstd()
-        data['r_s'] = (data['R'] / data['std'])
+        self.data['H'] = (data['R'] / data['std'])
+        self.data['ticker'] = ticker
 
-        return {
-            'ds': self.data['ds'].values,
-            'ts': self.data['ts'].values,
-            'ts_pcnt': self.data['ts_pcnt'].values,
-            'r_s': self.data['r_s'].values
-        }
+        return self.data
