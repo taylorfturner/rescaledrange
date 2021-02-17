@@ -1,4 +1,6 @@
 alabaster==0.7.12
+atomicwrites==1.4.0
+attrs==20.3.0
 Babel==2.9.0
 bokeh @ file:///C:/ci/bokeh_1603282469084/work
 certifi==2020.12.5
@@ -7,28 +9,35 @@ click @ file:///home/linux1/recipes/ci/click_1610990599742/work
 cloudpickle @ file:///tmp/build/80754af9/cloudpickle_1598884132938/work
 colorama==0.4.4
 contextvars==2.4
+coverage==5.4
 croniter==0.3.37
 cytoolz==0.11.0
 dask @ file:///tmp/build/80754af9/dask-core_1611341281313/work
 distributed @ file:///C:/ci/distributed_1611348877934/work
 docker==4.4.1
 docutils==0.16
+flake8==3.8.4
 fsspec @ file:///tmp/build/80754af9/fsspec_1602684995936/work
 graphviz==0.16
 HeapDict==1.0.1
 idna==2.10
 imagesize==1.2.0
 immutables @ file:///C:/ci/immutables_1592426094604/work
+importlib-metadata==3.4.0
 importlib-resources==5.1.0
+iniconfig==1.1.1
 Jinja2 @ file:///home/linux1/recipes/ci/jinja2_1610990516718/work
 locket==0.2.1
+lxml==4.6.2
 MarkupSafe==1.1.1
 marshmallow==3.10.0
 marshmallow-oneofschema==2.1.0
+mccabe==0.6.1
 mkl-fft==1.2.0
 mkl-random==1.1.1
 mkl-service==2.3.0
 msgpack @ file:///C:/ci/msgpack-python_1607965904074/work
+multitasking==0.0.9
 mypy-extensions==0.4.3
 natsort==7.1.1
 numpy @ file:///C:/ci/numpy_and_numpy_base_1603480701039/work
@@ -39,10 +48,16 @@ partd==1.1.0
 pendulum==2.1.2
 Pillow @ file:///C:/ci/pillow_1609842634117/work
 plotly==4.14.3
+pluggy==0.13.1
 prefect==0.14.5
 psutil @ file:///C:/ci/psutil_1598352185190/work
+py==1.10.0
+pycodestyle==2.6.0
+pyflakes==2.2.0
 Pygments==2.7.4
 pyparsing @ file:///home/linux1/recipes/ci/pyparsing_1610983426697/work
+pytest==6.2.2
+pytest-cov==2.7.1
 python-box==5.2.0
 python-dateutil==2.8.1
 python-slugify==4.0.1
@@ -51,6 +66,7 @@ pytzdata==2020.1
 pywin32==227
 PyYAML==5.4.1
 requests==2.25.1
+rescaledranges==0.0.0
 retrying==1.3.3
 six @ file:///C:/ci/six_1605187303045/work
 snowballstemmer==2.1.0
@@ -73,5 +89,6 @@ typing-extensions @ file:///tmp/build/80754af9/typing_extensions_1598376058250/w
 urllib3==1.26.3
 websocket-client==0.57.0
 wincertstore==0.2
+yfinance==0.1.55
 zict==2.0.0
 zipp==3.4.0
