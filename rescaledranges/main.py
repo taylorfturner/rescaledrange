@@ -35,10 +35,7 @@ with Flow("rescaled_range") as flow:
         ticker=ticker_list,
         mapped=True
     )
-    pre_processed_data = pre_process(
-        data=data,
-        mapped=True
-    )
+    pre_processed_data = pre_process(data=data, mapped=True)
     rs_data = rr(
         data=pre_processed_data,
         ticker=ticker_list,
@@ -46,7 +43,7 @@ with Flow("rescaled_range") as flow:
     )
     reduced_rs_data = concat_dataframes(rs_data)
     visualize(
-    	ticker_data=reduced_rs_data,
+        ticker_data=reduced_rs_data,
     )
 
 state = flow.run()
