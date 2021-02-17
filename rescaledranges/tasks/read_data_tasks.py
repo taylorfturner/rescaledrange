@@ -7,7 +7,12 @@ import yfinance as yf
 class DataReader(Task):
     def __init__(
         self,
-        config={"data_frame_type": "pandas", "data_type": "csv", "data_location": "local"}):
+        config={
+            "data_frame_type": "pandas",
+            "data_type": "csv",
+            "data_location": "local"
+        }
+    ):
         """
         DataReader Subclass of Prefect Task class for reading
         either Locally (Dask or Pandas) or query from Yahoo finance.
@@ -68,7 +73,7 @@ class DataReader(Task):
             df["year"] = pd.to_datetime(df["Date"]).dt.year
             return df
 
-        except Exception as e: 
+        except Exception as e:
             raise e
 
     def _read_local(self, ticker):
