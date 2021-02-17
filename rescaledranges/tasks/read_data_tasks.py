@@ -11,7 +11,7 @@ class DataReader(Task):
             "data_frame_type": "pandas",
             "data_type": "csv",
             "data_location": "local"
-        }
+        },
     ):
         """
         DataReader Subclass of Prefect Task class for reading
