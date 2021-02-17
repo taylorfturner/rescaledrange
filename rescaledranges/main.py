@@ -12,6 +12,7 @@ pre_process = PreProcess()
 rr = RescaledRange()
 visualize = Visualize()
 
+
 @task
 def concat_dataframes(data_frames):
     return pd.concat(data_frames)
