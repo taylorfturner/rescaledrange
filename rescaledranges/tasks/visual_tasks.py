@@ -24,20 +24,30 @@ class Visualize(Task):
     def visualize_graph(self, flow):
         raise NotImplementedError
 
-    def plot(self, ticker_data):
-        #TODO: move this to Dash
-        # https://dash.plotly.com/
+    def line_plot(self, ticker_data):
         plot_data_df = pd.DataFrame(ticker_data)
-        fig = make_subplots(specs=[[{"secondary_y": True}]])
-        fig.add_trace(
-            go.Scatter(x=plot_data_df['ds'], y=plot_data_df['ts'], name="ts data"),
-            secondary_y=False,
-        )
-        fig.add_trace(
-            go.Scatter(x=plot_data_df['ds'], y=plot_data_df['r_s'], name="r_s data"),
-            secondary_y=True,
-        )
+        for ticker in plot_data_df["ticker"]:
+            fig = make_subplots(specs=[[{"secondary_y": True}]])
+            fig.add_trace(
+                go.Scatter(x=ticker["Date"], y=ticker["Close"], name="ts data"),
+                secondary_y=False,
+            )
+            fig.add_trace(
+                go.Scatter(x=ticker["Date"], y=ticker["H"], name="H data"),
+                secondary_y=True,
+            )
+            fig.show()
+
+    def heatmap_plot(self, ticker_data):
+        df = pd.DataFrame(ticker_data)
+        print (df.head())
+        fig = go.Figure(data=go.Heatmap(
+            z=df["H"],
+            x=df["Date"],
+            y=df["ticker"],
+            colorscale="RdBu"))
         fig.show()
 
     def run(self, ticker_data):
-        self.plot(ticker_data)
+        # self.line_plot(ticker_data)
+        self.heatmap_plot(ticker_data)
