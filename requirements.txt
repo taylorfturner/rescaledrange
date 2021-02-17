@@ -10,9 +10,6 @@ locket==0.2.1
 MarkupSafe==1.1.1
 marshmallow==3.10.0
 marshmallow-oneofschema==2.1.0
-mkl-fft==1.2.0
-mkl-random==1.1.1
-mkl-service==2.3.0
 mypy-extensions==0.4.3
 natsort==7.1.1
 numpy==1.19.2
