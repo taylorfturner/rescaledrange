@@ -91,7 +91,6 @@ class DataReader(Task):
         else:
             raise ValueError("Only dask or pandas accepted as data_frame_type")
 
-
     def run(self, ticker):
         """[summary]
 
