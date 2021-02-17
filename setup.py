@@ -10,7 +10,6 @@ setup(
     author="Taylor F. Turner, IV",
     author_email="taylorfturner@gmail.com",
     license="All Rights Reserved",
-    website="www.taylorfturner.com",
     packages=find_packages(),
     include_package_data=True,
     install_requires=required,

@@ -1,60 +1,24 @@
-alabaster==0.7.12
-Babel==2.9.0
-bokeh @ file:///C:/ci/bokeh_1603282469084/work
-certifi==2020.12.5
-chardet==4.0.0
-click @ file:///home/linux1/recipes/ci/click_1610990599742/work
-cloudpickle @ file:///tmp/build/80754af9/cloudpickle_1598884132938/work
-colorama==0.4.4
-contextvars==2.4
-croniter==0.3.37
-cytoolz==0.11.0
-dask @ file:///tmp/build/80754af9/dask-core_1611341281313/work
-distributed @ file:///C:/ci/distributed_1611348877934/work
-docker==4.4.1
+dask==2021.1.1.
+distributed==2021.1.1
 docutils==0.16
-fsspec @ file:///tmp/build/80754af9/fsspec_1602684995936/work
 graphviz==0.16
 HeapDict==1.0.1
 idna==2.10
 imagesize==1.2.0
-immutables @ file:///C:/ci/immutables_1592426094604/work
 importlib-resources==5.1.0
-Jinja2 @ file:///home/linux1/recipes/ci/jinja2_1610990516718/work
 locket==0.2.1
 MarkupSafe==1.1.1
 marshmallow==3.10.0
 marshmallow-oneofschema==2.1.0
-mkl-fft==1.2.0
-mkl-random==1.1.1
-mkl-service==2.3.0
-msgpack @ file:///C:/ci/msgpack-python_1607965904074/work
 mypy-extensions==0.4.3
 natsort==7.1.1
-numpy @ file:///C:/ci/numpy_and_numpy_base_1603480701039/work
-olefile==0.46
-packaging @ file:///tmp/build/80754af9/packaging_1607971725249/work
-pandas @ file:///C:/ci/pandas_1602088210462/work
-partd==1.1.0
-pendulum==2.1.2
-Pillow @ file:///C:/ci/pillow_1609842634117/work
+numpy==1.19.2
+pandas==1.1.3
 plotly==4.14.3
 prefect==0.14.5
-psutil @ file:///C:/ci/psutil_1598352185190/work
-Pygments==2.7.4
-pyparsing @ file:///home/linux1/recipes/ci/pyparsing_1610983426697/work
-python-box==5.2.0
 python-dateutil==2.8.1
-python-slugify==4.0.1
-pytz @ file:///tmp/build/80754af9/pytz_1608922264688/work
-pytzdata==2020.1
-pywin32==227
 PyYAML==5.4.1
 requests==2.25.1
-retrying==1.3.3
-six @ file:///C:/ci/six_1605187303045/work
-snowballstemmer==2.1.0
-sortedcontainers @ file:///tmp/build/80754af9/sortedcontainers_1606865132123/work
 Sphinx==3.4.3
 sphinx-rtd-theme==0.5.1
 sphinxcontrib-applehelp==1.0.2
@@ -63,15 +27,3 @@ sphinxcontrib-htmlhelp==1.0.3
 sphinxcontrib-jsmath==1.0.1
 sphinxcontrib-qthelp==1.0.3
 sphinxcontrib-serializinghtml==1.1.4
-tabulate==0.8.7
-tblib @ file:///tmp/build/80754af9/tblib_1597928476713/work
-text-unidecode==1.3
-toml==0.10.2
-toolz @ file:///home/linux1/recipes/ci/toolz_1610987900194/work
-tornado @ file:///C:/ci/tornado_1606942379977/work
-typing-extensions @ file:///tmp/build/80754af9/typing_extensions_1598376058250/work
-urllib3==1.26.3
-websocket-client==0.57.0
-wincertstore==0.2
-zict==2.0.0
-zipp==3.4.0
