@@ -1,119 +1,32 @@
-# packages in environment at C:\Users\Taylor\anaconda3\envs\rescaledranges:
-#
-# Name                    Version                   Build  Channel
-alabaster                 0.7.12                   pypi_0    pypi
-atomicwrites              1.4.0                    pypi_0    pypi
-attrs                     20.3.0                   pypi_0    pypi
-babel                     2.9.0                    pypi_0    pypi
-blas                      1.0                         mkl  
-bokeh                     2.2.3                    py36_0  
-certifi                   2020.12.5        py36haa95532_0  
-chardet                   4.0.0                    pypi_0    pypi
-click                     7.1.2              pyhd3eb1b0_0  
-cloudpickle               1.6.0                      py_0  
-colorama                  0.4.4                    pypi_0    pypi
-contextvars               2.4                        py_0  
-coverage                  5.4                      pypi_0    pypi
-croniter                  0.3.37                   pypi_0    pypi
-cytoolz                   0.11.0           py36he774522_0  
-dask                      2021.1.1           pyhd3eb1b0_0  
-dask-core                 2021.1.1           pyhd3eb1b0_0  
-distributed               2021.1.1         py36haa95532_1  
-docker                    4.4.1                    pypi_0    pypi
-docutils                  0.16                     pypi_0    pypi
-flake8                    3.8.4                    pypi_0    pypi
-freetype                  2.10.4               hd328e21_0  
-fsspec                    0.8.3                      py_0  
-heapdict                  1.0.1                      py_0  
-idna                      2.10                     pypi_0    pypi
-imagesize                 1.2.0                    pypi_0    pypi
-immutables                0.14             py36he774522_0  
-importlib-metadata        3.4.0                    pypi_0    pypi
-importlib-resources       5.1.0                    pypi_0    pypi
-iniconfig                 1.1.1                    pypi_0    pypi
-intel-openmp              2020.2                      254  
-jinja2                    2.11.2             pyhd3eb1b0_0  
-jpeg                      9b                   hb83a4c4_2  
-libpng                    1.6.37               h2a8f88b_0  
-libtiff                   4.1.0                h56a325e_1  
-locket                    0.2.1            py36haa95532_1  
-lxml                      4.6.2                    pypi_0    pypi
-lz4-c                     1.9.3                h2bbff1b_0  
-markupsafe                1.1.1            py36he774522_0  
-marshmallow               3.10.0                   pypi_0    pypi
-marshmallow-oneofschema   2.1.0                    pypi_0    pypi
-mccabe                    0.6.1                    pypi_0    pypi
-mkl                       2020.2                      256  
-mkl-service               2.3.0            py36h196d8e1_0  
-mkl_fft                   1.2.0            py36h45dec08_0  
-mkl_random                1.1.1            py36h47e9c7a_0  
-msgpack-python            1.0.1            py36h59b6b97_0  
-multitasking              0.0.9                    pypi_0    pypi
-mypy-extensions           0.4.3                    pypi_0    pypi
-natsort                   7.1.1                    pypi_0    pypi
-numpy                     1.19.2           py36hadc3359_0  
-numpy-base                1.19.2           py36ha3acd2a_0  
-olefile                   0.46                     py36_0  
-packaging                 20.8               pyhd3eb1b0_0  
-pandas                    1.1.3            py36ha925a31_0  
-partd                     1.1.0                      py_0  
-pendulum                  2.1.2                    pypi_0    pypi
-pillow                    8.1.0            py36h4fa10fc_0  
-pip                       20.3.3           py36haa95532_0  
-plotly                    4.14.3                   pypi_0    pypi
-pluggy                    0.13.1                   pypi_0    pypi
-prefect                   0.14.5                   pypi_0    pypi
-psutil                    5.7.2            py36he774522_0  
-py                        1.10.0                   pypi_0    pypi
-pycodestyle               2.6.0                    pypi_0    pypi
-pyflakes                  2.2.0                    pypi_0    pypi
-pygments                  2.7.4                    pypi_0    pypi
-pyparsing                 2.4.7              pyhd3eb1b0_0  
-pytest                    6.2.2                    pypi_0    pypi
-pytest-cov                2.7.1                    pypi_0    pypi
-python                    3.6.12               h5500b2f_2  
-python-box                5.2.0                    pypi_0    pypi
-python-dateutil           2.8.1                      py_0  
-python-graphviz           0.16                     pypi_0    pypi
-python-slugify            4.0.1                    pypi_0    pypi
-pytz                      2020.5             pyhd3eb1b0_0  
-pytzdata                  2020.1                   pypi_0    pypi
-pywin32                   227                      pypi_0    pypi
-pyyaml                    5.4.1            py36h2bbff1b_1  
-requests                  2.25.1                   pypi_0    pypi
-rescaledranges            0.0.0                    pypi_0    pypi
-retrying                  1.3.3                    pypi_0    pypi
-setuptools                52.0.0           py36haa95532_0  
-six                       1.15.0           py36haa95532_0  
-snowballstemmer           2.1.0                    pypi_0    pypi
-sortedcontainers          2.3.0              pyhd3eb1b0_0  
-sphinx                    3.4.3                    pypi_0    pypi
-sphinx-rtd-theme          0.5.1                    pypi_0    pypi
-sphinxcontrib-applehelp   1.0.2                    pypi_0    pypi
-sphinxcontrib-devhelp     1.0.2                    pypi_0    pypi
-sphinxcontrib-htmlhelp    1.0.3                    pypi_0    pypi
-sphinxcontrib-jsmath      1.0.1                    pypi_0    pypi
-sphinxcontrib-qthelp      1.0.3                    pypi_0    pypi
-sphinxcontrib-serializinghtml 1.1.4                    pypi_0    pypi
-sqlite                    3.33.0               h2a8f88b_0  
-tabulate                  0.8.7                    pypi_0    pypi
-tblib                     1.7.0                      py_0  
-text-unidecode            1.3                      pypi_0    pypi
-tk                        8.6.10               he774522_0  
-toml                      0.10.2                   pypi_0    pypi
-toolz                     0.11.1             pyhd3eb1b0_0  
-tornado                   6.1              py36h2bbff1b_0  
-typing_extensions         3.7.4.3                    py_0  
-urllib3                   1.26.3                   pypi_0    pypi
-vc                        14.2                 h21ff451_1  
-vs2015_runtime            14.27.29016          h5e58377_2  
-websocket-client          0.57.0                   pypi_0    pypi
-wheel                     0.36.2             pyhd3eb1b0_0  
-wincertstore              0.2              py36h7fe50ca_0  
-xz                        5.2.5                h62dcd97_0  
-yaml                      0.2.5                he774522_0  
-yfinance                  0.1.55                   pypi_0    pypi
-zict                      2.0.0                      py_0  
-zipp                      3.4.0                    pypi_0    pypi
-zlib                      1.2.11               h62dcd97_4  
-zstd                      1.4.5                h04227a9_0  
+dask==2021.1.1.
+distributed==2021.1.1
+docutils==0.16
+graphviz==0.16
+HeapDict==1.0.1
+idna==2.10
+imagesize==1.2.0
+importlib-resources==5.1.0
+locket==0.2.1
+MarkupSafe==1.1.1
+marshmallow==3.10.0
+marshmallow-oneofschema==2.1.0
+mkl-fft==1.2.0
+mkl-random==1.1.1
+mkl-service==2.3.0
+mypy-extensions==0.4.3
+natsort==7.1.1
+numpy==1.19.2
+pandas==1.1.3
+plotly==4.14.3
+prefect==0.14.5
+python-dateutil==2.8.1
+PyYAML==5.4.1
+requests==2.25.1
+Sphinx==3.4.3
+sphinx-rtd-theme==0.5.1
+sphinxcontrib-applehelp==1.0.2
+sphinxcontrib-devhelp==1.0.2
+sphinxcontrib-htmlhelp==1.0.3
+sphinxcontrib-jsmath==1.0.1
+sphinxcontrib-qthelp==1.0.3
+sphinxcontrib-serializinghtml==1.1.4
