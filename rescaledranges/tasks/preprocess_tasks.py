@@ -1,4 +1,4 @@
-from prefect import Task 
+from prefect import Task
 
 
 class PreProcess(Task):
