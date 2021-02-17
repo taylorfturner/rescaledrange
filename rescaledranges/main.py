@@ -17,18 +17,18 @@ visualize = Visualize()
 def concat_dataframes(data_frames):
     return pd.concat(data_frames)
 
-with Flow('rescaled_range') as flow:
+with Flow("rescaled_range") as flow:
     data_frame_type = Parameter(
-        name='data_frame_type',
-        default='pandas'
+        name="data_frame_type",
+        default="pandas"
     )
     data_type = Parameter(
-        name='data_type',
-        default='csv'
+        name="data_type",
+        default="csv"
     )
     ticker_list = Parameter(
-        name='ticker_list',
-        default=['SPY', 'TLT', 'IWM', 'DBA', 'SHY', 'USO']
+        name="ticker_list",
+        default=["SPY", "TLT", "IWM", "DBA", "SHY", "USO"]
     )
     flow.add_task(data_type)
     data = reader(
