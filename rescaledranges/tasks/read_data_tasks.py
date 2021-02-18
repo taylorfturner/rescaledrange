@@ -7,11 +7,10 @@ import yfinance as yf
 class DataReader(Task):
     def __init__(
         self,
-        config={
-            "data_frame_type": "pandas",
-            "data_type": "csv",
-            "data_location": "local"
-        },
+        data_frame_type="pandas",
+        data_type="csv",
+        data_location="local",
+        config={"start": '2000-01-01', "end": "2021-02-17"}
     ):
         """
         DataReader Subclass of Prefect Task class for reading
@@ -23,9 +22,10 @@ class DataReader(Task):
         >>> <Task: DataReader>
         >>> data_reader.run()
         """
-        self.data_frame_type = config.get("data_frame_type", "pandas")
-        self.data_type = config.get("data_type", "csv")
-        self.data_location = config.get("data_location", "local")
+        self.data_frame_type = data_frame_type
+        self.data_type = data_type
+        self.data_location = data_location
+        self.config = config
         super().__init__()
 
     def _read_dask(self, ticker):
@@ -55,7 +55,7 @@ class DataReader(Task):
         except Exception as e:
             raise e
 
-    def _query_yahoo(self, ticker):
+    def _query_yahoo(self, ticker, config):
         """[summary]
 
         :param ticker: [description]
@@ -64,13 +64,9 @@ class DataReader(Task):
         :type data_type: [type]
         """
         try:
-            df = yf.download(ticker, start="2000-01-01", end="2021-02-16")
-
-            # TODO: fix for 1 ticker: receives a too many values to unpack error
-            df.columns = ["%s%s" % (a, "|%s" % b if b else "") for a, b in df.columns]
+            df = yf.download(ticker,interval="1mo", **config)
             df = df.reset_index()
 
-            df["year"] = pd.to_datetime(df["Date"]).dt.year
             return df
 
         except Exception as e:
@@ -97,12 +93,12 @@ class DataReader(Task):
         :param ticker: [description]
         :type ticker: [type]
         :raises ValueError: [description]
-        :return: [description]
+        :return: [description]s
         :rtype: [type]
         """
         if self.data_location == "local":
             return self._read_local(ticker)
         elif self.data_location == "yahoo":
-            return self._query_yahoo(ticker)
+            return self._query_yahoo(ticker, config=self.config)
         else:
             raise ValueError("Only local or yahoo accepted as data location")
