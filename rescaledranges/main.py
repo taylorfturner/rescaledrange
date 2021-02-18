@@ -7,7 +7,7 @@ from tasks.visual_tasks import Visualize
 import pandas as pd
 
 
-reader = DataReader()
+reader = DataReader(data_location="yahoo", data_type="csv", data_frame_type="pandas")
 pre_process = PreProcess()
 rr = RescaledRange()
 visualize = Visualize()
@@ -18,19 +18,10 @@ def concat_dataframes(data_frames):
     return pd.concat(data_frames)
 
 with Flow("rescaled_range") as flow:
-    data_frame_type = Parameter(
-        name="data_frame_type",
-        default="pandas"
-    )
-    data_type = Parameter(
-        name="data_type",
-        default="csv"
-    )
     ticker_list = Parameter(
         name="ticker_list",
-        default=["SPY", "TLT", "IWM", "DBA", "SHY", "USO"]
+        default=["GLD", "TLT", "SHY", "EDV", "SPY", "DBA"]
     )
-    flow.add_task(data_type)
     data = reader(
         ticker=ticker_list,
         mapped=True
@@ -47,7 +38,6 @@ with Flow("rescaled_range") as flow:
     )
 
 state = flow.run()
-state.visualize()
 
 # To see data output from tasks
 # access through `state.result[task_name]`
