@@ -38,7 +38,4 @@ with Flow("rescaled_range") as flow:
     )
 
 state = flow.run()
-
-# To see data output from tasks
-# access through `state.result[task_name]`
-state.result[rs_data]
+state.result[reduced_rs_data]

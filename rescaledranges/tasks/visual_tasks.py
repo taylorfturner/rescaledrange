@@ -30,7 +30,7 @@ class Visualize(Task):
             fig = make_subplots(specs=[[{"secondary_y": True}]])
             fig.add_trace(
                 go.Scatter(x=ticker["Date"], y=ticker["Close"], name="ts data"),
-                secondary_y=False,
+                secondary_y=False,  
             )
             fig.add_trace(
                 go.Scatter(x=ticker["Date"], y=ticker["H"], name="H data"),

@@ -93,7 +93,7 @@ class DataReader(Task):
         :param ticker: [description]
         :type ticker: [type]
         :raises ValueError: [description]
-        :return: [description]s
+        :return: [description]
         :rtype: [type]
         """
         if self.data_location == "local":
