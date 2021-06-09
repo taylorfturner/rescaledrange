@@ -64,7 +64,7 @@ class DataReader(Task):
         :type data_type: [type]
         """
         try:
-            df = yf.download(ticker,interval="1mo", **config)
+            df = yf.download(ticker,interval="1d", **config)
             df = df.reset_index()
 
             return df

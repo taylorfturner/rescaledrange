@@ -26,21 +26,22 @@ class Visualize(Task):
 
     def line_plot(self, ticker_data):
         plot_data_df = pd.DataFrame(ticker_data)
-        for ticker in plot_data_df["ticker"]:
+        
+        for ticker in plot_data_df["ticker"].unique():
+            ticker_df = plot_data_df[plot_data_df["ticker"] == ticker]
             fig = make_subplots(specs=[[{"secondary_y": True}]])
             fig.add_trace(
-                go.Scatter(x=ticker["Date"], y=ticker["Close"], name="ts data"),
+                go.Scatter(x=ticker_df["Date"].values, y=ticker_df["Close"].values, name="ts data"),
                 secondary_y=False,  
             )
             fig.add_trace(
-                go.Scatter(x=ticker["Date"], y=ticker["H"], name="H data"),
+                go.Scatter(x=ticker_df["Date"].values, y=ticker_df["H"].values, name="H data"),
                 secondary_y=True,
             )
             fig.show()
 
     def heatmap_plot(self, ticker_data):
         df = pd.DataFrame(ticker_data)
-        print (df.head())
         fig = go.Figure(data=go.Heatmap(
             z=df["H"],
             x=df["Date"],
@@ -49,5 +50,5 @@ class Visualize(Task):
         fig.show()
 
     def run(self, ticker_data):
-        # self.line_plot(ticker_data)
-        self.heatmap_plot(ticker_data)
+        return self.line_plot(ticker_data)
+        # self.heatmap_plot(ticker_data)

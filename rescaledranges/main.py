@@ -20,7 +20,7 @@ def concat_dataframes(data_frames):
 with Flow("rescaled_range") as flow:
     ticker_list = Parameter(
         name="ticker_list",
-        default=["GLD", "TLT", "SHY", "EDV", "SPY", "DBA"]
+        default=["IWM"]
     )
     data = reader(
         ticker=ticker_list,

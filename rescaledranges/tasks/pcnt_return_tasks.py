@@ -61,7 +61,4 @@ class RescaledRange(Task):
         self.data['H'] = (data['R'] / data['std'])
         self.data['ticker'] = ticker
 
-        self.data = self.data[["Date", "counter", "H", "ticker", "Close"]]
-        self.data = self.data.dropna(subset=["H"])
-        
         return self.data
