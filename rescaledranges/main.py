@@ -20,7 +20,7 @@ def concat_dataframes(data_frames):
 with Flow("rescaled_range") as flow:
     ticker_list = Parameter(
         name="ticker_list",
-        default=["IWM"]
+        default=["IWM", "GLD", "TLT", "DBA"]
     )
     data = reader(
         ticker=ticker_list,
@@ -38,4 +38,3 @@ with Flow("rescaled_range") as flow:
     )
 
 state = flow.run()
-state.result[reduced_rs_data]

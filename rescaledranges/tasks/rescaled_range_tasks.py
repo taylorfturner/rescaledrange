@@ -15,10 +15,10 @@ class RescaledRange(Task):
 
     def cummean(self, column_name):
         return self.data[column_name].shift(1).cumsum() / \
-            (self.data['counter'].cumsum()-1)
+            (self.data["counter"].cumsum()-1)
 
     def mean_adjust(self, column_name):
-        return self.data[column_name] - self.data['mean']
+        return self.data[column_name] - self.data["mean"]
 
     def calc_r(self, column_name):
         return self.data[column_name].rolling(
@@ -37,8 +37,8 @@ class RescaledRange(Task):
 
     def cumstd(self):
         def _cum_std(row): 
-            return (row['cum_sum_mean_adj_sqr'] / row['cum_sum_counter']) ** .5
-        return self.data.apply(_cum_std, axis=1)
+            return (row["cum_sum_mean_adj_sqr"] / row["cum_sum_counter"]) ** .5
+        return self.data.apply(_cum_std, axis=1)        
 
     def run(self, data, ticker):
         """[summary]
@@ -50,16 +50,16 @@ class RescaledRange(Task):
         """
         self.data = data
 
-        self.data['mean'] = self.cummean('ts_pcnt')
-        self.data['mean_adj'] = self.mean_adjust('ts_pcnt')
-        self.data['sum_deviate'] = self.data['mean_adj'].cumsum()
-        self.data['R'] = self.calc_r('mean_adj')
-        self.data['mean_adj_sqr'] = self.data['mean_adj'] ** 2
-        self.data['cum_sum_mean_adj_sqr'] = self.data['mean_adj_sqr'].cumsum()
-        self.data['cum_sum_counter'] = self.data['counter'].cumsum()
-        self.data['std'] = self.cumstd()
-        self.data['H'] = (data['R'] / data['std'])
-        self.data['ticker'] = ticker
+        self.data["mean"] = self.cummean("ts_pcnt")
+        self.data["mean_adj"] = self.mean_adjust("ts_pcnt")
+        self.data["sum_deviate"] = self.data["mean_adj"].cumsum()
+        self.data["R"] = self.calc_r("mean_adj")
+        self.data["mean_adj_sqr"] = self.data["mean_adj"] ** 2
+        self.data["cum_sum_mean_adj_sqr"] = self.data["mean_adj_sqr"].cumsum()
+        self.data["cum_sum_counter"] = self.data["counter"].cumsum()
+        self.data["std"] = self.cumstd()
+        self.data["H"] = (data["R"] / data["std"])
+        self.data["ticker"] = ticker
 
         self.data = self.data[["Date", "counter", "H", "ticker", "Close"]]
         self.data = self.data.dropna(subset=["H"])

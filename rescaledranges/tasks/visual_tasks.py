@@ -50,5 +50,5 @@ class Visualize(Task):
         fig.show()
 
     def run(self, ticker_data):
-        return self.line_plot(ticker_data)
-        # self.heatmap_plot(ticker_data)
+        self.line_plot(ticker_data)
+        self.heatmap_plot(ticker_data)
