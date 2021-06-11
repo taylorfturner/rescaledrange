@@ -57,7 +57,3 @@ html_theme = 'furo'
 html_static_path = ['_static']
 
 autosummary_generate = True
-
-html_theme_options = {
-    "prefers-color-scheme": "dark"
-}

@@ -2,7 +2,7 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Get Started" href="installation.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Get Started" href="getstarted.html" />
 
     <meta name="generator" content="sphinx-3.4.3, furo 2021.04.11.beta34"/>
         <title>Home - rescaledranges 0.0.0 documentation</title>
@@ -108,7 +108,7 @@
   <input type="hidden" name="area" value="default">
 </form><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Get Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getstarted.html">Get Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Example</a></li>
 <li class="toctree-l1"><a class="reference internal" href="rescaledranges.html">Class Docs</a></li>
 </ul>
@@ -125,16 +125,16 @@
         <label class="toc-overlay-icon toc-content-icon" for="__toc">
           <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
         </label>
-        <div class="section" id="welcome-to-rescaledranges-s-documentation">
-<h1>Welcome to rescaledranges’s documentation!<a class="headerlink" href="#welcome-to-rescaledranges-s-documentation" title="Permalink to this headline">¶</a></h1>
+        <div class="section" id="welcome-to-the-rescaledranges-package-documentation">
+<h1>Welcome to the <cite>rescaledranges</cite> package documentation!<a class="headerlink" href="#welcome-to-the-rescaledranges-package-documentation" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Get Started</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#github">Github</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#pypi">PyPi</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#conda-forge">Conda Forge</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#unit-tests">Unit Tests</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#build-docs">Build Docs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getstarted.html">Get Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getstarted.html#github">Github</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getstarted.html#pypi">PyPi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getstarted.html#conda-forge">Conda Forge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getstarted.html#unit-tests">Unit Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getstarted.html#build-docs">Build Docs</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Example</a></li>
@@ -143,25 +143,37 @@
 </div>
 <div class="section" id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">rescaledranges</span></code> is a short to intermediate term time series analysis tool.</p>
-</div>
-<div class="section" id="framework">
-<h2>Framework<a class="headerlink" href="#framework" title="Permalink to this headline">¶</a></h2>
-<p>Hurst</p>
+<p><code class="docutils literal notranslate"><span class="pre">rescaledranges</span></code> is a python package build to analyze any time series that ticks. Specifically in mind when this was built – equities,
+fixed income, commodities, and currency time series. The package only supports pulling ticker data from the Yahoo API.</p>
+<p>The core of this code is nothing new – just delivered through a new medium. H. E. Hurst developed this method of time series analysis and
+framework for understanding the world in the 1950s. Although almost eulogized by Mandelbrot, Hurst’s contemporaries were not nearly as admiring.
+Hurst was an anachronism in his own field of engineering. He was mocked by senior partners for his findings.</p>
+<p>I highly recommend further reading about the underlying framework.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Rescaled_range">Rescaled Range Wiki</a></p></li>
+<li><p><a class="reference external" href="https://www.amazon.com/Misbehavior-Markets-Fractal-Financial-Turbulence/dp/0465043577/ref=sr_1_1?dchild=1&amp;keywords=misbehavior+of+markets&amp;qid=1623442660&amp;sr=8-1">Misbehavior of Markets by Benoit Mandelbrot</a></p></li>
+<li><p><a class="reference external" href="https://www.amazon.com/Volatility-Surface-Practitioners-Guide/dp/0471792519/ref=sr_1_1?dchild=1&amp;keywords=volatility+surface&amp;qid=1623442740&amp;sr=8-1">The Volatility Surface by Jim Gatheral</a></p></li>
+</ul>
 </div>
 <div class="section" id="data-sources">
 <h2>Data Sources<a class="headerlink" href="#data-sources" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>User-Provided: Users can provide their own file with data</p></li>
-<li><p>Yahoo: The yahoo API</p></li>
+<li><p>User-Provided: Users can provide a <cite>.csv</cite> file with their own data</p></li>
+<li><p>Yahoo: Using the the yahoo API python package. Interaction is abstracted through a class.</p></li>
 </ul>
 </div>
 <div class="section" id="limitations">
 <h2>Limitations<a class="headerlink" href="#limitations" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>In its infancy.</p></li>
-<li><p>Not fully tested</p></li>
+<li><p>In its infancy</p></li>
 <li><p>Needs to be used in “action”</p></li>
+</ul>
+</div>
+<div class="section" id="contribution-model">
+<h2>Contribution Model<a class="headerlink" href="#contribution-model" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>If you would like to directly contribute code, please reach out to [me](www.taylorfturner.com)</p></li>
+<li><p>See something you would like added, please add an issue on the repo!</p></li>
 </ul>
 </div>
 </div>
@@ -178,7 +190,7 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="installation.html">
+          <a class="next-page" href="getstarted.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
@@ -218,11 +230,11 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Welcome to rescaledranges’s documentation!</a><ul>
+<li><a class="reference internal" href="#">Welcome to the <cite>rescaledranges</cite> package documentation!</a><ul>
 <li><a class="reference internal" href="#summary">Summary</a></li>
-<li><a class="reference internal" href="#framework">Framework</a></li>
 <li><a class="reference internal" href="#data-sources">Data Sources</a></li>
 <li><a class="reference internal" href="#limitations">Limitations</a></li>
+<li><a class="reference internal" href="#contribution-model">Contribution Model</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
