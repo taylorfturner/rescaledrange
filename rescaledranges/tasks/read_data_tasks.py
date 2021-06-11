@@ -7,11 +7,10 @@ import yfinance as yf
 class DataReader(Task):
     def __init__(
         self,
-        config={
-            "data_frame_type": "pandas",
-            "data_type": "csv",
-            "data_location": "local"
-        },
+        data_frame_type="pandas",
+        data_type="csv",
+        data_location="local",
+        config={"start": '2000-01-01', "end": "2021-02-17"}
     ):
         """
         DataReader Subclass of Prefect Task class for reading
@@ -23,61 +22,51 @@ class DataReader(Task):
         >>> <Task: DataReader>
         >>> data_reader.run()
         """
-        self.data_frame_type = config.get("data_frame_type", "pandas")
-        self.data_type = config.get("data_type", "csv")
-        self.data_location = config.get("data_location", "local")
+        self.data_frame_type = data_frame_type
+        self.data_type = data_type
+        self.data_location = data_location
+        self.config = config
         super().__init__()
 
     def _read_dask(self, ticker):
-        """[summary]
+        """Hidden method to read data as dask dataframe
 
         :param ticker: [description]
         :type ticker: [type]
         :return: [description]
         :rtype: [type]
         """
-        try:
-            df = pd.read_csv(f"data/{ticker}.{self.data_type}")
-            return dd.from_pandas(df, npartitions=3)
-        except Exception as e:
-            raise e
+        df = pd.read_csv(f"data/{ticker}.{self.data_type}")
+        return dd.from_pandas(df, npartitions=3)
 
     def _read_pandas(self, ticker):
-        """[summary]
+        """Hidden method to read data as pandas dataframe
 
         :param ticker: [description]
         :type ticker: [type]
         :return: [description]
         :rtype: [type]
         """
-        try:
-            return pd.read_csv(f"data/{ticker}.{self.data_type}")
-        except Exception as e:
-            raise e
+        return pd.read_csv(f"data/{ticker}.{self.data_type}")
 
-    def _query_yahoo(self, ticker):
-        """[summary]
 
+    def _query_yahoo(self, ticker, config):
+        """Hidden method to query the Yahoo API and return
+        pandas dataframe
+        
         :param ticker: [description]
         :type ticker: [type]
         :param data_type: [description]
         :type data_type: [type]
         """
-        try:
-            df = yf.download(ticker, start="2000-01-01", end="2021-02-16")
+        df = yf.download(ticker,interval="1d", **config)
+        df = df.reset_index()
 
-            # TODO: fix for 1 ticker: receives a too many values to unpack error
-            df.columns = ["%s%s" % (a, "|%s" % b if b else "") for a, b in df.columns]
-            df = df.reset_index()
+        return df
 
-            df["year"] = pd.to_datetime(df["Date"]).dt.year
-            return df
-
-        except Exception as e:
-            raise e
 
     def _read_local(self, ticker):
-        """[summary]
+        """Hidden method to read data from localhost
 
         :param ticker: [description]
         :type ticker: [type]
@@ -92,17 +81,18 @@ class DataReader(Task):
             raise ValueError("Only dask or pandas accepted as data_frame_type")
 
     def run(self, ticker):
-        """[summary]
+        """Primary run method required due
+        to prefect task class inheritance.
 
-        :param ticker: [description]
-        :type ticker: [type]
-        :raises ValueError: [description]
-        :return: [description]
-        :rtype: [type]
+        :param ticker: Time series ticker or ID
+        :type ticker: str, required
+        :raises ValueError: Only localhost or yahoo allowed at this time
+        :return: either a pandas dataframe or a string that is the valueerror
+        :rtype: ValueError
         """
         if self.data_location == "local":
             return self._read_local(ticker)
         elif self.data_location == "yahoo":
-            return self._query_yahoo(ticker)
+            return self._query_yahoo(ticker, config=self.config)
         else:
             raise ValueError("Only local or yahoo accepted as data location")

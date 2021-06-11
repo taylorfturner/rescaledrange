@@ -15,7 +15,7 @@ class PreProcess(Task):
     def run(self, data):
 
         def counter_column(row):
-            row["counter"] = 1
+            row["counter"] = int(1)
             return row
 
         data = data.apply(counter_column, axis=1)

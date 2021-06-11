@@ -2,10 +2,10 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Get Started" href="getstarted.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Example" href="examples.html" /><link rel="prev" title="Welcome to the rescaledranges package documentation!" href="index.html" />
 
     <meta name="generator" content="sphinx-3.4.3, furo 2021.04.11.beta34"/>
-        <title>Home - rescaledranges 0.0.0 documentation</title>
+        <title>Get Started - rescaledranges 0.0.0 documentation</title>
       <link rel="stylesheet" href="_static/styles/furo.css?digest=59ab60ac09ea94ccfe6deddff6d715cce948a6fc">
     <link rel="stylesheet" href="_static/pygments.css">
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css">
@@ -86,7 +86,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="#"><div class="brand">rescaledranges 0.0.0 documentation</div></a>
+      <a href="index.html"><div class="brand">rescaledranges 0.0.0 documentation</div></a>
     </div>
     <div class="header-right">
       <label class="toc-overlay-icon toc-header-icon" for="__toc">
@@ -97,7 +97,7 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand" href="#">
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   
   <span class="sidebar-brand-text">rescaledranges 0.0.0 documentation</span>
@@ -107,8 +107,8 @@
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form><div class="sidebar-scroll"><div class="sidebar-tree">
-  <ul>
-<li class="toctree-l1"><a class="reference internal" href="getstarted.html">Get Started</a></li>
+  <ul class="current">
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Get Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Example</a></li>
 <li class="toctree-l1"><a class="reference internal" href="rescaledranges.html">Class Docs</a></li>
 </ul>
@@ -125,79 +125,61 @@
         <label class="toc-overlay-icon toc-content-icon" for="__toc">
           <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
         </label>
-        <div class="section" id="welcome-to-the-rescaledranges-package-documentation">
-<h1>Welcome to the <cite>rescaledranges</cite> package documentation!<a class="headerlink" href="#welcome-to-the-rescaledranges-package-documentation" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="getstarted.html">Get Started</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="getstarted.html#install">Install</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getstarted.html#unit-tests">Unit Tests</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getstarted.html#build-docs">Build Docs</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="examples.html">Example</a></li>
-<li class="toctree-l1"><a class="reference internal" href="rescaledranges.html">Class Docs</a></li>
-</ul>
+        <div class="section" id="get-started">
+<h1>Get Started<a class="headerlink" href="#get-started" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="install">
+<h2>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/taylorfturner/rescaledranges.git
+<span class="nb">cd</span> rescaledranges
+conda create -n rescaledranges <span class="nv">python</span><span class="o">==</span><span class="m">3</span>.8
+conda activate rescaledranges
+python setup.py install
+</pre></div>
 </div>
-<div class="section" id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">rescaledranges</span></code> is a python package built to analyze any time series that ticks. Specifically in mind when this was built – equities,
-fixed income, commodities, and currency time series. The package only supports pulling ticker data from the Yahoo API.</p>
-<p>The core of this code is nothing new – just delivered through a new medium. H. E. Hurst developed this method of time series analysis and
-framework for understanding the world in the 1950s. Although almost eulogized by Mandelbrot, Hurst’s contemporaries were not nearly as admiring.
-Hurst was an anachronism in his own field of engineering. He was mocked by senior partners for his findings.</p>
-<p>I highly recommend further reading about the underlying framework.</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Rescaled_range">Rescaled Range Wiki</a></p></li>
-<li><p><a class="reference external" href="https://www.amazon.com/Misbehavior-Markets-Fractal-Financial-Turbulence/dp/0465043577/ref=sr_1_1?dchild=1&amp;keywords=misbehavior+of+markets&amp;qid=1623442660&amp;sr=8-1">Misbehavior of Markets by Benoit Mandelbrot</a></p></li>
-<li><p><a class="reference external" href="https://www.amazon.com/Volatility-Surface-Practitioners-Guide/dp/0471792519/ref=sr_1_1?dchild=1&amp;keywords=volatility+surface&amp;qid=1623442740&amp;sr=8-1">The Volatility Surface by Jim Gatheral</a></p></li>
-</ul>
+<p>PyPi and conda forge are not currently supported.</p>
 </div>
-<div class="section" id="data-sources">
-<h2>Data Sources<a class="headerlink" href="#data-sources" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>User-Provided: Users can provide a <cite>.csv</cite> file with their own data</p></li>
-<li><p>Yahoo: Using the the yahoo API python package. Interaction is abstracted through a class.</p></li>
-</ul>
-</div>
-<div class="section" id="limitations">
-<h2>Limitations<a class="headerlink" href="#limitations" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>In its infancy</p></li>
-<li><p>Needs to be used in “action”</p></li>
-</ul>
-</div>
-<div class="section" id="contribution-model">
-<h2>Contribution Model<a class="headerlink" href="#contribution-model" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>If you would like to directly contribute code, please reach out to [me](www.taylorfturner.com)</p></li>
-<li><p>See something you would like added, please add an issue on the repo!</p></li>
-</ul>
+<div class="section" id="unit-tests">
+<h2>Unit Tests<a class="headerlink" href="#unit-tests" title="Permalink to this headline">¶</a></h2>
+<p>Unit testing results are written in HTML files to <cite>htmlcov/</cite>.
+Open in preferred browser for futher analysis of “line-level”
+coverage and missing lines.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pytest --cov<span class="o">=</span>rescaledranges/ --cov-report html
+</pre></div>
 </div>
 </div>
-<div class="section" id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
-<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
-<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
-</ul>
+<div class="section" id="build-docs">
+<h2>Build Docs<a class="headerlink" href="#build-docs" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> docs
+make html
+</pre></div>
+</div>
+</div>
 </div>
 
       </article>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="getstarted.html">
+          <a class="next-page" href="examples.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Get Started</div>
+                <div class="title">Example</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          
+          <a class="prev-page" href="index.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Home</div>
+                
+              </div>
+            </a>
         </div>
 
         <div class="related-information">
@@ -208,7 +190,7 @@ Hurst was an anachronism in his own field of engineering. He was mocked by senio
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
               <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
             |
-            <a class="muted-link" href="_sources/index.rst.txt"
+            <a class="muted-link" href="_sources/getstarted.rst.txt"
                rel="nofollow">
               Show Source
             </a>
@@ -228,14 +210,12 @@ Hurst was an anachronism in his own field of engineering. He was mocked by senio
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Welcome to the <cite>rescaledranges</cite> package documentation!</a><ul>
-<li><a class="reference internal" href="#summary">Summary</a></li>
-<li><a class="reference internal" href="#data-sources">Data Sources</a></li>
-<li><a class="reference internal" href="#limitations">Limitations</a></li>
-<li><a class="reference internal" href="#contribution-model">Contribution Model</a></li>
+<li><a class="reference internal" href="#">Get Started</a><ul>
+<li><a class="reference internal" href="#install">Install</a></li>
+<li><a class="reference internal" href="#unit-tests">Unit Tests</a></li>
+<li><a class="reference internal" href="#build-docs">Build Docs</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
 </ul>
 
           </div>
