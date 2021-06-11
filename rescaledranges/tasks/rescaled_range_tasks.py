@@ -14,13 +14,34 @@ class RescaledRange(Task):
         self.data = None
 
     def cummean(self, column_name):
+        """[summary]
+
+        :param column_name: [description]
+        :type column_name: [type]
+        :return: [description]
+        :rtype: [type]
+        """
         return self.data[column_name].shift(1).cumsum() / \
             (self.data["counter"].cumsum()-1)
 
     def mean_adjust(self, column_name):
+        """[summary]
+
+        :param column_name: [description]
+        :type column_name: [type]
+        :return: [description]
+        :rtype: [type]
+        """
         return self.data[column_name] - self.data["mean"]
 
     def calc_r(self, column_name):
+        """[summary]
+
+        :param column_name: [description]
+        :type column_name: [type]
+        :return: [description]
+        :rtype: [type]
+        """
         return self.data[column_name].rolling(
                 window=6,
                 min_periods=6,
@@ -36,6 +57,8 @@ class RescaledRange(Task):
             ).min()
 
     def cumstd(self):
+        """[summary]
+        """
         def _cum_std(row): 
             return (row["cum_sum_mean_adj_sqr"] / row["cum_sum_counter"]) ** .5
         return self.data.apply(_cum_std, axis=1)        

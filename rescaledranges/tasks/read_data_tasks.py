@@ -29,51 +29,44 @@ class DataReader(Task):
         super().__init__()
 
     def _read_dask(self, ticker):
-        """[summary]
+        """Hidden method to read data as dask dataframe
 
         :param ticker: [description]
         :type ticker: [type]
         :return: [description]
         :rtype: [type]
         """
-        try:
-            df = pd.read_csv(f"data/{ticker}.{self.data_type}")
-            return dd.from_pandas(df, npartitions=3)
-        except Exception as e:
-            raise e
+        df = pd.read_csv(f"data/{ticker}.{self.data_type}")
+        return dd.from_pandas(df, npartitions=3)
 
     def _read_pandas(self, ticker):
-        """[summary]
+        """Hidden method to read data as pandas dataframe
 
         :param ticker: [description]
         :type ticker: [type]
         :return: [description]
         :rtype: [type]
         """
-        try:
-            return pd.read_csv(f"data/{ticker}.{self.data_type}")
-        except Exception as e:
-            raise e
+        return pd.read_csv(f"data/{ticker}.{self.data_type}")
+
 
     def _query_yahoo(self, ticker, config):
-        """[summary]
-
+        """Hidden method to query the Yahoo API and return
+        pandas dataframe
+        
         :param ticker: [description]
         :type ticker: [type]
         :param data_type: [description]
         :type data_type: [type]
         """
-        try:
-            df = yf.download(ticker,interval="1d", **config)
-            df = df.reset_index()
+        df = yf.download(ticker,interval="1d", **config)
+        df = df.reset_index()
 
-            return df
+        return df
 
-        except Exception as e:
-            raise e
 
     def _read_local(self, ticker):
-        """[summary]
+        """Hidden method to read data from localhost
 
         :param ticker: [description]
         :type ticker: [type]
@@ -88,13 +81,14 @@ class DataReader(Task):
             raise ValueError("Only dask or pandas accepted as data_frame_type")
 
     def run(self, ticker):
-        """[summary]
+        """Primary run method required due
+        to prefect task class inheritance.
 
-        :param ticker: [description]
-        :type ticker: [type]
-        :raises ValueError: [description]
-        :return: [description]
-        :rtype: [type]
+        :param ticker: Time series ticker or ID
+        :type ticker: str, required
+        :raises ValueError: Only localhost or yahoo allowed at this time
+        :return: either a pandas dataframe or a string that is the valueerror
+        :rtype: ValueError
         """
         if self.data_location == "local":
             return self._read_local(ticker)
