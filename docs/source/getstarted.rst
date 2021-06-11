@@ -1,8 +1,8 @@
 Get Started
 ===========
 
-Github
-******
+Install
+*******
 .. code-block:: bash
 
     git clone https://github.com/taylorfturner/rescaledranges.git
@@ -11,15 +11,7 @@ Github
     conda activate rescaledranges
     python setup.py install
 
-PyPi
-****
-Not currently supported and no plans to make publicly available at this in this format.
-
-Conda Forge
-***********
-Not currently supported and no plans to make publicly available at this in this format.
-
-
+PyPi and conda forge are not currently supported.
 
 Unit Tests
 ***********
@@ -39,5 +31,3 @@ Build Docs
 
     cd docs 
     make html
-
-

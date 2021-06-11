@@ -13,7 +13,7 @@ Welcome to the `rescaledranges` package documentation!
 
 Summary
 *******
-``rescaledranges`` is a python package build to analyze any time series that ticks. Specifically in mind when this was built -- equities,
+``rescaledranges`` is a python package built to analyze any time series that ticks. Specifically in mind when this was built -- equities,
 fixed income, commodities, and currency time series. The package only supports pulling ticker data from the Yahoo API.
 
 The core of this code is nothing new -- just delivered through a new medium. H. E. Hurst developed this method of time series analysis and
