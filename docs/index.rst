@@ -1,8 +1,3 @@
-Modules
-=======
 
-.. autosummary::
-   :toctree: modules
 
-   src.tasks
-   src.flows
+source/index.rst
