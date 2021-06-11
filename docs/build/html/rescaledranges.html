@@ -1,99 +1,295 @@
+<!doctype html>
+<html class="no-js">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="Example" href="examples.html" />
 
-<!DOCTYPE html>
+    <meta name="generator" content="sphinx-3.4.3, furo 2021.04.11.beta34"/>
+        <title>Class Docs - rescaledranges 0.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/styles/furo.css?digest=59ab60ac09ea94ccfe6deddff6d715cce948a6fc">
+    <link rel="stylesheet" href="_static/pygments.css">
+    <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css">
+    
 
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>&lt;no title&gt; &#8212; rescaledranges 0.0.0 documentation</title>
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+
+<style>
+  :root {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+  }
+
+  /* For allowing end-user-specific overrides */
+  .override-light {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  .override-dark {
+    --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+  }
+</style><link rel="stylesheet" href="_static/styles/furo-extensions.css?digest=d391b54134226e4196576da3bdb6dddb7e05ba2b"></head>
+  <body dir="">
+    
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke-width="1.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z"/>
+      <line x1="4" y1="6" x2="20" y2="6" />
+      <line x1="10" y1="12" x2="20" y2="12" />
+      <line x1="6" y1="18" x2="20" y2="18" />
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+      class="feather feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+      class="feather feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">rescaledranges 0.0.0 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  
+  <span class="sidebar-brand-text">rescaledranges 0.0.0 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html">
+  <input class="sidebar-search" placeholder=Search name="q">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="getstarted.html">Get Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Example</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Class Docs</a></li>
+</ul>
+
+</div>
+</div>
+      </div>
+      
+    </div>
+  </aside>
+  <main class="main">
+    <div class="content">
+      <article role="main">
+        <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+        </label>
+        <div class="section" id="module-rescaledranges.tasks.read_data_tasks">
+<span id="class-docs"></span><h1>Class Docs<a class="headerlink" href="#module-rescaledranges.tasks.read_data_tasks" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="rescaledranges.tasks.read_data_tasks.DataReader">
+<em class="property">class </em><code class="sig-prename descclassname">rescaledranges.tasks.read_data_tasks.</code><code class="sig-name descname">DataReader</code><a class="headerlink" href="#rescaledranges.tasks.read_data_tasks.DataReader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">prefect.core.task.Task</span></code></p>
+<dl class="py method">
+<dt id="rescaledranges.tasks.read_data_tasks.DataReader.run">
+<code class="sig-name descname">run</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data_frame_type</span></em>, <em class="sig-param"><span class="n">data_type</span></em>, <em class="sig-param"><span class="n">ticker</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rescaledranges.tasks.read_data_tasks.DataReader.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>[summary]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_frame_type</strong> (<em>[</em><em>type</em><em>]</em>) – [description]</p></li>
+<li><p><strong>data_type</strong> (<em>[</em><em>type</em><em>]</em>) – [description]</p></li>
+<li><p><strong>ticker</strong> (<em>[</em><em>type</em><em>]</em>) – [description]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – [description]</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>[description]</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>[type]</p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+<span class="target" id="module-rescaledranges.tasks.rescaled_range_tasks"></span><dl class="py class">
+<dt id="rescaledranges.tasks.rescaled_range_tasks.RescaledRange">
+<em class="property">class </em><code class="sig-prename descclassname">rescaledranges.tasks.rescaled_range_tasks.</code><code class="sig-name descname">RescaledRange</code><a class="headerlink" href="#rescaledranges.tasks.rescaled_range_tasks.RescaledRange" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">prefect.core.task.Task</span></code></p>
+<dl class="py method">
+<dt id="rescaledranges.tasks.rescaled_range_tasks.RescaledRange.calc_r">
+<code class="sig-name descname">calc_r</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">column_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rescaledranges.tasks.rescaled_range_tasks.RescaledRange.calc_r" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt id="rescaledranges.tasks.rescaled_range_tasks.RescaledRange.cummean">
+<code class="sig-name descname">cummean</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">column_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rescaledranges.tasks.rescaled_range_tasks.RescaledRange.cummean" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt id="rescaledranges.tasks.rescaled_range_tasks.RescaledRange.cumstd">
+<code class="sig-name descname">cumstd</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rescaledranges.tasks.rescaled_range_tasks.RescaledRange.cumstd" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt id="rescaledranges.tasks.rescaled_range_tasks.RescaledRange.mean_adjust">
+<code class="sig-name descname">mean_adjust</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">column_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rescaledranges.tasks.rescaled_range_tasks.RescaledRange.mean_adjust" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt id="rescaledranges.tasks.rescaled_range_tasks.RescaledRange.run">
+<code class="sig-name descname">run</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rescaledranges.tasks.rescaled_range_tasks.RescaledRange.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>[summary]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> (<em>[</em><em>type</em><em>]</em>) – [description]</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>[description]</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>[type]</p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+<span class="target" id="module-rescaledranges.tasks.visual_tasks"></span><dl class="py class">
+<dt id="rescaledranges.tasks.visual_tasks.Visualize">
+<em class="property">class </em><code class="sig-prename descclassname">rescaledranges.tasks.visual_tasks.</code><code class="sig-name descname">Visualize</code><a class="headerlink" href="#rescaledranges.tasks.visual_tasks.Visualize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">prefect.core.task.Task</span></code></p>
+<dl class="py method">
+<dt id="rescaledranges.tasks.visual_tasks.Visualize.plot">
+<code class="sig-name descname">plot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ticker_data</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rescaledranges.tasks.visual_tasks.Visualize.plot" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt id="rescaledranges.tasks.visual_tasks.Visualize.run">
+<code class="sig-name descname">run</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ticker_data</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rescaledranges.tasks.visual_tasks.Visualize.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <cite>run()</cite> method is called (with arguments, if appropriate) to run a task.</p>
+<p><em>Note:</em> The implemented <cite>run</cite> method cannot have <cite>*args</cite> in its signature. In addition,
+the following keywords are reserved: <cite>upstream_tasks</cite>, <cite>task_args</cite> and <cite>mapped</cite>.</p>
+<p>If a task has arguments in its <cite>run()</cite> method, these can be bound either by using the
+functional API and _calling_ the task instance, or by using <cite>self.bind</cite> directly.</p>
+<p>In addition to running arbitrary functions, tasks can interact with Prefect in a few ways:
+&lt;ul&gt;&lt;li&gt; Return an optional result. When this function runs successfully,</p>
+<blockquote>
+<div><p>the task is considered successful and the result (if any) can be
+made available to downstream tasks. &lt;/li&gt;</p>
+</div></blockquote>
+<p>&lt;li&gt; Raise an error. Errors are interpreted as failure. &lt;/li&gt;
+&lt;li&gt; Raise a [signal](../engine/signals.html). Signals can include <cite>FAIL</cite>, <cite>SUCCESS</cite>,</p>
+<blockquote>
+<div><dl>
+<dt><cite>RETRY</cite>, <cite>SKIP</cite>, etc. and indicate that the task should be put in the indicated state.</dt><dd><p>&lt;ul&gt;
+&lt;li&gt; <cite>FAIL</cite> will lead to retries if appropriate &lt;/li&gt;
+&lt;li&gt; <cite>SUCCESS</cite> will cause the task to be marked successful &lt;/li&gt;
+&lt;li&gt; <cite>RETRY</cite> will cause the task to be marked for retry, even if <cite>max_retries</cite></p>
+<blockquote>
+<div><p>has been exceeded &lt;/li&gt;</p>
+</div></blockquote>
+<dl class="simple">
+<dt>&lt;li&gt; <cite>SKIP</cite> will skip the task and possibly propogate the skip state through the</dt><dd><p>flow, depending on whether downstream tasks have <cite>skip_on_upstream_skip=True</cite>.</p>
+</dd>
+</dl>
+<p>&lt;/li&gt;&lt;/ul&gt;</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>&lt;/li&gt;&lt;/ul&gt;</p>
+</dd></dl>
+<dl class="py method">
+<dt id="rescaledranges.tasks.visual_tasks.Visualize.signal_summary">
+<code class="sig-name descname">signal_summary</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rescaledranges.tasks.visual_tasks.Visualize.signal_summary" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt id="rescaledranges.tasks.visual_tasks.Visualize.visualize_graph">
+<code class="sig-name descname">visualize_graph</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">flow</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rescaledranges.tasks.visual_tasks.Visualize.visualize_graph" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+</dd></dl>
+</div>
+
+      </article>
+      <footer>
+        
+        <div class="related-pages">
+          
+          <a class="prev-page" href="examples.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Example</div>
+                
+              </div>
+            </a>
+        </div>
+
+        <div class="related-information">
+              Copyright &#169; 2021, Taylor Turner
+            |
+            Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+              and
+              <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+              <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
+            |
+            <a class="muted-link" href="_sources/rescaledranges.rst.txt"
+               rel="nofollow">
+              Show Source
+            </a>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer no-toc">
+      
+      
+      
+    </aside>
+  </main>
+</div>
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="&lt;no title&gt;" href="examples.html" />
-   
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
-
-  </head><body>
-  
-
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          
-
-          <div class="body" role="main">
-            
-  
-
-          </div>
-          
-        </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="index.html">rescaledranges</a></h1>
-
-
-
-
-
-
-
-
-<h3>Navigation</h3>
-
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="examples.html" title="previous chapter">&lt;no title&gt;</a></li>
-  </ul></li>
-</ul>
-</div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</div>
-<script>$('#searchbox').show(0);</script>
-
-
-
-
-
-
-
-
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="footer">
-      &copy;2021, Taylor Turner.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.3</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
-      
-      |
-      <a href="_sources/rescaledranges.rst.txt"
-          rel="nofollow">Page source</a>
-    </div>
-
-    
-
-    
-  </body>
+    <script src="_static/scripts/main.js?digest=e931d09b2a40c1bb82b542effe772014573baf67"></script></body>
 </html>
