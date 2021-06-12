@@ -19,7 +19,7 @@ class DataReader(Task):
         :Example:
         >>> data_reader = DataReader()
         >>> data_reader
-        >>> <Task: DataReader>
+        <Task: DataReader>
         >>> data_reader.run()
         """
         self.data_frame_type = data_frame_type

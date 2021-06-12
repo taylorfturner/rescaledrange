@@ -10,21 +10,30 @@ class Visualize(Task):
     def __init__(self):
         """
         Visualize Subclass of Prefect Task class.
-
+        
         :Example:
         >>> viz = Visualize()
         >>> viz
-        >>> <Task: Visualize>
+        <Task: Visualize>
         """
         super().__init__()
 
     def signal_summary(self):
+        """
+        test
+        """
         raise NotImplementedError
 
     def visualize_graph(self, flow):
+        """
+        test
+        """
         raise NotImplementedError
 
-    def line_plot(self, ticker_data):
+    def line_chart(self, ticker_data):
+        """
+        test
+        """
         plot_data_df = pd.DataFrame(ticker_data)
         
         for ticker in plot_data_df["ticker"].unique():
@@ -40,7 +49,12 @@ class Visualize(Task):
             )
             fig.show()
 
-    def heatmap_plot(self, ticker_data):
+        return True
+
+    def heatmap(self, ticker_data):
+        """
+        test
+        """
         df = pd.DataFrame(ticker_data)
         fig = go.Figure(data=go.Heatmap(
             z=df["H"],
@@ -49,6 +63,15 @@ class Visualize(Task):
             colorscale="RdBu"))
         fig.show()
 
+        return True
+
     def run(self, ticker_data):
+        """Primary run method required due to prefect task class inheritance.
+
+        :param ticker_data: Time series ticker_data or ID
+        :type ticker_data: str, required
+        """
         self.line_plot(ticker_data)
         self.heatmap_plot(ticker_data)
+        
+        return True

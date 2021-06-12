@@ -11,7 +11,7 @@ Install
     conda activate rescaledranges
     python setup.py install
 
-PyPi and conda forge are not currently supported.
+*Note*: PyPi and conda forge are not currently supported.
 
 Unit Tests
 ***********

@@ -13,7 +13,12 @@ class PreProcess(Task):
         super().__init__()
 
     def run(self, data):
+        """Primary run method required due
+        to prefect task class inheritance.
 
+        :param data: Time series data
+        :type data: pd.DataFrame, required
+        """
         def counter_column(row):
             row["counter"] = int(1)
             return row
