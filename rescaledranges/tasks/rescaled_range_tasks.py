@@ -71,7 +71,15 @@ class RescaledRange(Task):
         :return: [description]
         :rtype: [type]
         """
+
+        def counter_column(row):
+            row["counter"] = int(1)
+            return row
+
         self.data = data
+
+        self.data = self.data.apply(counter_column, axis=1)
+        self.data["ts_pcnt"] = self.data["Close"].pct_change()
 
         self.data["mean"] = self.cummean("ts_pcnt")
         self.data["mean_adj"] = self.mean_adjust("ts_pcnt")
@@ -81,7 +89,7 @@ class RescaledRange(Task):
         self.data["cum_sum_mean_adj_sqr"] = self.data["mean_adj_sqr"].cumsum()
         self.data["cum_sum_counter"] = self.data["counter"].cumsum()
         self.data["std"] = self.cumstd()
-        self.data["H"] = (data["R"] / data["std"])
+        self.data["H"] = (self.data["R"] / self.data["std"])
         self.data["ticker"] = ticker
 
         self.data = self.data[["Date", "counter", "H", "ticker", "Close"]]
