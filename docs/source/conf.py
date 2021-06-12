@@ -61,3 +61,7 @@ html_static_path = ["_static"]
 autosummary_generate = True
 sphinxemoji_style = 'twemoji'
 autoclass_content = 'both'
+
+html_theme_options = {
+    "announcement": "rescaledranges is still a WIP. Thanks for your patience.",
+}
