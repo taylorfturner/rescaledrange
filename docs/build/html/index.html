@@ -37,7 +37,8 @@
   --color-code-foreground: #d0d0d0;
   
   }
-</style><link rel="stylesheet" href="_static/styles/furo-extensions.css?digest=d391b54134226e4196576da3bdb6dddb7e05ba2b"></head>
+</style><link rel="stylesheet" type="text/css" href="_static/twemoji.css" />
+    <link rel="stylesheet" href="_static/styles/furo-extensions.css?digest=d391b54134226e4196576da3bdb6dddb7e05ba2b"></head>
   <body dir="">
     
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
@@ -110,7 +111,7 @@
   <ul>
 <li class="toctree-l1"><a class="reference internal" href="getstarted.html">Get Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Example</a></li>
-<li class="toctree-l1"><a class="reference internal" href="rescaledranges.html">Class Docs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rescaledranges.html">Docs</a></li>
 </ul>
 
 </div>
@@ -125,8 +126,8 @@
         <label class="toc-overlay-icon toc-content-icon" for="__toc">
           <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
         </label>
-        <div class="section" id="welcome-to-the-rescaledranges-package-docs">
-<h1>Welcome to the <cite>rescaledranges</cite> package docs!<a class="headerlink" href="#welcome-to-the-rescaledranges-package-docs" title="Permalink to this headline">¶</a></h1>
+        <div class="section" id="welcome-to-the-rescaledranges-docs">
+<h1>Welcome to the <cite>rescaledranges</cite> docs!<a class="headerlink" href="#welcome-to-the-rescaledranges-docs" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="getstarted.html">Get Started</a><ul>
@@ -136,42 +137,43 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Example</a></li>
-<li class="toctree-l1"><a class="reference internal" href="rescaledranges.html">Class Docs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rescaledranges.html">Docs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rescaledranges.html#read-data">Read Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rescaledranges.html#module-rescaledranges.tasks.preprocess_tasks">Data PreProcessing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rescaledranges.html#rescaled-range-calculations">Rescaled Range Calculations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rescaledranges.html#visualization-functionalities">Visualization Functionalities</a></li>
+</ul>
+</li>
 </ul>
 </div>
 <div class="section" id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">rescaledranges</span></code> is a python package built to analyze any time series that ticks. Specifically in mind when this was built – equities,
-fixed income, commodities, and currency time series. The package only supports pulling ticker data from the Yahoo API.</p>
-<p>The core of this code is nothing new – just delivered through a new medium. H. E. Hurst developed this method of time series analysis and
-framework for understanding the world in the 1950s. Although almost eulogized by Mandelbrot, Hurst’s contemporaries were not nearly as admiring.
-Hurst was an anachronism in his own field of engineering. He was mocked by senior partners for his findings.</p>
+fixed income, commodities, and currency time series. The package only supports pulling ticker data from the Yahoo API and <cite>.csv</cite> files
+provided by the user on their same machine where the code is executed.</p>
+<p>The core of this code is nothing new – just delivered through a new medium (i.e. python). H. E. Hurst developed this method of
+time series analysis and framework for understanding the world in the 1950s. Although all but eulogized by Mandelbrot,
+Hurst’s contemporaries were not nearly as admiring. Hurst was an anachronism in his field of engineering.
+He was mocked by consensus for his research and assertions.</p>
 <p>I highly recommend further reading about the underlying framework.</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Rescaled_range">Rescaled Range Wiki</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Rescaled_range">Wiki Rescaled Range</a></p></li>
+<li><p><a class="reference external" href="https://www.amazon.com/Misbehavior-Markets-Fractal-Financial-Turbulence/dp/0465043577/ref=sr_1_2?dchild=1&amp;keywords=mandelbrot&amp;qid=1611854283&amp;sr=8-2">The Misbehavior of Markets: A Fractal View of Financial Turbulence</a></p></li>
 <li><p><a class="reference external" href="https://www.amazon.com/Misbehavior-Markets-Fractal-Financial-Turbulence/dp/0465043577/ref=sr_1_1?dchild=1&amp;keywords=misbehavior+of+markets&amp;qid=1623442660&amp;sr=8-1">Misbehavior of Markets by Benoit Mandelbrot</a></p></li>
 <li><p><a class="reference external" href="https://www.amazon.com/Volatility-Surface-Practitioners-Guide/dp/0471792519/ref=sr_1_1?dchild=1&amp;keywords=volatility+surface&amp;qid=1623442740&amp;sr=8-1">The Volatility Surface by Jim Gatheral</a></p></li>
+<li><p><a class="reference external" href="https://amity.edu/UserFiles/ajcfr/4d1cHurst%20Exponent%20as%20an%20Indicator%20of%20Market%20Efficiency%20An%20empirical%20study%20of%20the%20stock%20prices%20of%20Amazon.com.pdf">Amity Journal of Commerce and Financial Review</a></p></li>
+<li><p><a class="reference external" href="http://sfb649.wiwi.hu-berlin.de/fedc_homepage/xplore/tutorials/xfghtmlnode99.html">Hurst and Rescaled Range Analysis</a></p></li>
+<li><p><a class="reference external" href="https://medium.com/swlh/the-fractal-indicator-detecting-tops-bottoms-in-markets-1d8aac0269e8">The Fractal Indicator</a></p></li>
 </ul>
+<p>Here’s to you, Mr. Hurst 🐐</p>
+<a class="reference internal image-reference" href="https://media.giphy.com/media/I4wGMXoi2kMDe/giphy.gif"><img alt="https://media.giphy.com/media/I4wGMXoi2kMDe/giphy.gif" src="https://media.giphy.com/media/I4wGMXoi2kMDe/giphy.gif" style="width: 400px;"/></a>
 </div>
-<div class="section" id="data-sources">
-<h2>Data Sources<a class="headerlink" href="#data-sources" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="caveats-and-contribution-model">
+<h2>Caveats and Contribution Model<a class="headerlink" href="#caveats-and-contribution-model" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>User-Provided: Users can provide a <cite>.csv</cite> file with their own data</p></li>
-<li><p>Yahoo: Using the the yahoo API python package. Interaction is abstracted through a class.</p></li>
-</ul>
-</div>
-<div class="section" id="limitations">
-<h2>Limitations<a class="headerlink" href="#limitations" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>In its infancy</p></li>
-<li><p>Needs to be used in “action”</p></li>
-</ul>
-</div>
-<div class="section" id="contribution-model">
-<h2>Contribution Model<a class="headerlink" href="#contribution-model" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>If you would like to directly contribute code, please reach out to [me](www.taylorfturner.com)</p></li>
-<li><p>See something you would like added, please add an issue on the repo!</p></li>
+<li><p>This package is still in its infancy and not fully tested in the real-world.</p></li>
+<li><p>If you would like to directly contribute code, reach out to <a class="reference external" href="https://www.taylorfturner.com">me</a> and let’s talk about your ideas!</p></li>
+<li><p>See something you would like added, please <a class="reference external" href="https://github.com/taylorfturner/rescaledranges/issues">add an issue</a> on the repo!</p></li>
 </ul>
 </div>
 </div>
@@ -228,11 +230,9 @@ Hurst was an anachronism in his own field of engineering. He was mocked by senio
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Welcome to the <cite>rescaledranges</cite> package docs!</a><ul>
+<li><a class="reference internal" href="#">Welcome to the <cite>rescaledranges</cite> docs!</a><ul>
 <li><a class="reference internal" href="#summary">Summary</a></li>
-<li><a class="reference internal" href="#data-sources">Data Sources</a></li>
-<li><a class="reference internal" href="#limitations">Limitations</a></li>
-<li><a class="reference internal" href="#contribution-model">Contribution Model</a></li>
+<li><a class="reference internal" href="#caveats-and-contribution-model">Caveats and Contribution Model</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
@@ -250,5 +250,7 @@ Hurst was an anachronism in his own field of engineering. He was mocked by senio
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js"></script>
+    <script src="_static/twemoji.js"></script>
     <script src="_static/scripts/main.js?digest=e931d09b2a40c1bb82b542effe772014573baf67"></script></body>
 </html>

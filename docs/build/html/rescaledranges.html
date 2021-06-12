@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="Example" href="examples.html" />
 
     <meta name="generator" content="sphinx-3.4.3, furo 2021.04.11.beta34"/>
-        <title>Class Docs - rescaledranges 0.0.0 documentation</title>
+        <title>Docs - rescaledranges 0.0.0 documentation</title>
       <link rel="stylesheet" href="_static/styles/furo.css?digest=59ab60ac09ea94ccfe6deddff6d715cce948a6fc">
     <link rel="stylesheet" href="_static/pygments.css">
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css">
@@ -37,7 +37,8 @@
   --color-code-foreground: #d0d0d0;
   
   }
-</style><link rel="stylesheet" href="_static/styles/furo-extensions.css?digest=d391b54134226e4196576da3bdb6dddb7e05ba2b"></head>
+</style><link rel="stylesheet" type="text/css" href="_static/twemoji.css" />
+    <link rel="stylesheet" href="_static/styles/furo-extensions.css?digest=d391b54134226e4196576da3bdb6dddb7e05ba2b"></head>
   <body dir="">
     
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
@@ -89,7 +90,7 @@
       <a href="index.html"><div class="brand">rescaledranges 0.0.0 documentation</div></a>
     </div>
     <div class="header-right">
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
     </div>
@@ -110,7 +111,7 @@
   <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="getstarted.html">Get Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Example</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Class Docs</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Docs</a></li>
 </ul>
 
 </div>
@@ -122,15 +123,31 @@
   <main class="main">
     <div class="content">
       <article role="main">
-        <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+        <label class="toc-overlay-icon toc-content-icon" for="__toc">
           <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
         </label>
-        <div class="section" id="module-rescaledranges.tasks.read_data_tasks">
-<span id="class-docs"></span><h1>Class Docs<a class="headerlink" href="#module-rescaledranges.tasks.read_data_tasks" title="Permalink to this headline">¶</a></h1>
-<dl class="py class">
+        <div class="section" id="docs">
+<h1>Docs<a class="headerlink" href="#docs" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="read-data">
+<h2>Read Data<a class="headerlink" href="#read-data" title="Permalink to this headline">¶</a></h2>
+<p>Yahoo data API only supported as a programmtic means for querying data.
+Users can provide their own file locally if they want.</p>
+<span class="target" id="module-rescaledranges.tasks.read_data_tasks"></span><dl class="py class">
 <dt id="rescaledranges.tasks.read_data_tasks.DataReader">
 <em class="property">class </em><code class="sig-prename descclassname">rescaledranges.tasks.read_data_tasks.</code><code class="sig-name descname">DataReader</code><a class="headerlink" href="#rescaledranges.tasks.read_data_tasks.DataReader" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">prefect.core.task.Task</span></code></p>
+<p>DataReader Subclass of Prefect Task class for reading
+either Dask or P</p>
+<dl class="field-list simple">
+<dt class="field-odd">Example</dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data_reader</span> <span class="o">=</span> <span class="n">DataReader</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data_reader</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="o">&lt;</span><span class="n">Task</span><span class="p">:</span> <span class="n">DataReader</span><span class="o">&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data_reader</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
 <dl class="py method">
 <dt id="rescaledranges.tasks.read_data_tasks.DataReader.run">
 <code class="sig-name descname">run</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data_frame_type</span></em>, <em class="sig-param"><span class="n">data_type</span></em>, <em class="sig-param"><span class="n">ticker</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rescaledranges.tasks.read_data_tasks.DataReader.run" title="Permalink to this definition">¶</a></dt>
@@ -155,10 +172,75 @@
 </dl>
 </dd></dl>
 </dd></dl>
+</div>
+<div class="section" id="module-rescaledranges.tasks.preprocess_tasks">
+<span id="data-preprocessing"></span><h2>Data PreProcessing<a class="headerlink" href="#module-rescaledranges.tasks.preprocess_tasks" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="rescaledranges.tasks.preprocess_tasks.PreProcess">
+<em class="property">class </em><code class="sig-prename descclassname">rescaledranges.tasks.preprocess_tasks.</code><code class="sig-name descname">PreProcess</code><a class="headerlink" href="#rescaledranges.tasks.preprocess_tasks.PreProcess" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">prefect.core.task.Task</span></code></p>
+<p>PreProcess Subclass of Prefect Task class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Example</dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">prep</span> <span class="o">=</span> <span class="n">PreProcess</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">prep</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="rescaledranges.tasks.preprocess_tasks.PreProcess.run">
+<code class="sig-name descname">run</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rescaledranges.tasks.preprocess_tasks.PreProcess.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <cite>run()</cite> method is called (with arguments, if appropriate) to run a task.</p>
+<p><em>Note:</em> The implemented <cite>run</cite> method cannot have <cite>*args</cite> in its signature. In addition,
+the following keywords are reserved: <cite>upstream_tasks</cite>, <cite>task_args</cite> and <cite>mapped</cite>.</p>
+<p>If a task has arguments in its <cite>run()</cite> method, these can be bound either by using the
+functional API and _calling_ the task instance, or by using <cite>self.bind</cite> directly.</p>
+<p>In addition to running arbitrary functions, tasks can interact with Prefect in a few ways:
+&lt;ul&gt;&lt;li&gt; Return an optional result. When this function runs successfully,</p>
+<blockquote>
+<div><p>the task is considered successful and the result (if any) can be
+made available to downstream tasks. &lt;/li&gt;</p>
+</div></blockquote>
+<p>&lt;li&gt; Raise an error. Errors are interpreted as failure. &lt;/li&gt;
+&lt;li&gt; Raise a [signal](../engine/signals.html). Signals can include <cite>FAIL</cite>, <cite>SUCCESS</cite>,</p>
+<blockquote>
+<div><dl>
+<dt><cite>RETRY</cite>, <cite>SKIP</cite>, etc. and indicate that the task should be put in the indicated state.</dt><dd><p>&lt;ul&gt;
+&lt;li&gt; <cite>FAIL</cite> will lead to retries if appropriate &lt;/li&gt;
+&lt;li&gt; <cite>SUCCESS</cite> will cause the task to be marked successful &lt;/li&gt;
+&lt;li&gt; <cite>RETRY</cite> will cause the task to be marked for retry, even if <cite>max_retries</cite></p>
+<blockquote>
+<div><p>has been exceeded &lt;/li&gt;</p>
+</div></blockquote>
+<dl class="simple">
+<dt>&lt;li&gt; <cite>SKIP</cite> will skip the task and possibly propogate the skip state through the</dt><dd><p>flow, depending on whether downstream tasks have <cite>skip_on_upstream_skip=True</cite>.</p>
+</dd>
+</dl>
+<p>&lt;/li&gt;&lt;/ul&gt;</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>&lt;/li&gt;&lt;/ul&gt;</p>
+</dd></dl>
+</dd></dl>
+</div>
+<div class="section" id="rescaled-range-calculations">
+<h2>Rescaled Range Calculations<a class="headerlink" href="#rescaled-range-calculations" title="Permalink to this headline">¶</a></h2>
+<p>This code is the guts of the package.</p>
 <span class="target" id="module-rescaledranges.tasks.rescaled_range_tasks"></span><dl class="py class">
 <dt id="rescaledranges.tasks.rescaled_range_tasks.RescaledRange">
 <em class="property">class </em><code class="sig-prename descclassname">rescaledranges.tasks.rescaled_range_tasks.</code><code class="sig-name descname">RescaledRange</code><a class="headerlink" href="#rescaledranges.tasks.rescaled_range_tasks.RescaledRange" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">prefect.core.task.Task</span></code></p>
+<p>RescaledRange Subclass of Prefect Task Class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Example</dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">rescaled_ranges</span> <span class="o">=</span> <span class="n">RescaledRange</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rescaled_ranges</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
 <dl class="py method">
 <dt id="rescaledranges.tasks.rescaled_range_tasks.RescaledRange.calc_r">
 <code class="sig-name descname">calc_r</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">column_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rescaledranges.tasks.rescaled_range_tasks.RescaledRange.calc_r" title="Permalink to this definition">¶</a></dt>
@@ -192,10 +274,24 @@
 </dl>
 </dd></dl>
 </dd></dl>
+</div>
+<div class="section" id="visualization-functionalities">
+<h2>Visualization Functionalities<a class="headerlink" href="#visualization-functionalities" title="Permalink to this headline">¶</a></h2>
+<p>Still a work in progress.</p>
 <span class="target" id="module-rescaledranges.tasks.visual_tasks"></span><dl class="py class">
 <dt id="rescaledranges.tasks.visual_tasks.Visualize">
 <em class="property">class </em><code class="sig-prename descclassname">rescaledranges.tasks.visual_tasks.</code><code class="sig-name descname">Visualize</code><a class="headerlink" href="#rescaledranges.tasks.visual_tasks.Visualize" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">prefect.core.task.Task</span></code></p>
+<p>Visualize Subclass of Prefect Task class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Example</dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">viz</span> <span class="o">=</span> <span class="n">Visualize</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">viz</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="o">&lt;</span><span class="n">Task</span><span class="p">:</span> <span class="n">Visualize</span><span class="o">&gt;</span>
+</pre></div>
+</div>
 <dl class="py method">
 <dt id="rescaledranges.tasks.visual_tasks.Visualize.plot">
 <code class="sig-name descname">plot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ticker_data</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rescaledranges.tasks.visual_tasks.Visualize.plot" title="Permalink to this definition">¶</a></dt>
@@ -245,6 +341,7 @@ made available to downstream tasks. &lt;/li&gt;</p>
 <dd></dd></dl>
 </dd></dl>
 </div>
+</div>
 
       </article>
       <footer>
@@ -280,8 +377,30 @@ made available to downstream tasks. &lt;/li&gt;</p>
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Docs</a><ul>
+<li><a class="reference internal" href="#read-data">Read Data</a></li>
+<li><a class="reference internal" href="#module-rescaledranges.tasks.preprocess_tasks">Data PreProcessing</a></li>
+<li><a class="reference internal" href="#rescaled-range-calculations">Rescaled Range Calculations</a></li>
+<li><a class="reference internal" href="#visualization-functionalities">Visualization Functionalities</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
@@ -291,5 +410,7 @@ made available to downstream tasks. &lt;/li&gt;</p>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js"></script>
+    <script src="_static/twemoji.js"></script>
     <script src="_static/scripts/main.js?digest=e931d09b2a40c1bb82b542effe772014573baf67"></script></body>
 </html>
