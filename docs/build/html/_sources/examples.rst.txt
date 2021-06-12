@@ -59,4 +59,7 @@ queried data, how it was processed, and the final output.
 
     state.result[<task_variable_object>].result
 
-And that's it!
+And that's it ... now go get after it!
+
+.. image:: https://media.giphy.com/media/MFsqcBSoOKPbjtmvWz/giphy.gif
+    :width: 400
