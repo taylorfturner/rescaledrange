@@ -1,6 +1,8 @@
 import pytest
-from .fixtures import fixture_flow
+from .fixtures import fixture_flow, iwm_test_data
 from ...rescaledranges.tasks.read_data_tasks import DataReader
+from mock import mock, patch
+import yfinance
 
 
 class TestReadData:
@@ -40,4 +42,30 @@ class TestReadData:
         )
         data_reader.run(
             ticker='IWM',
+        )
+
+    def test_data_reader_failure_data_location(self):
+        with pytest.raises(ValueError):
+            data_reader = DataReader(
+                data_frame_type="pandas",
+                data_type="csv",
+                data_location="failure"
+            )
+            data_reader.run(
+                ticker="IWM"
+            )
+
+    @mock.patch("yfinance.download")
+    def test_data_reader_yahoo_api_mock_query(self, mock_request, monkeypatch, iwm_test_data):
+
+        mock_request.return_value.text = iwm_test_data
+        monkeypatch.setattr(yfinance, "download", mock_request)
+
+        data_reader = DataReader(
+            data_frame_type="pandas",
+            data_type="csv",
+            data_location="yahoo",
+        )
+        data_reader.run(
+            ticker="IWM"
         )
